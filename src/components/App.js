@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      test
+      test test 2
     </div>
   );
 }
