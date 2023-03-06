@@ -30,12 +30,11 @@ function App() {
 
   return (
     <div className="App">
-
       
       <ProfileSelect handleSelectProfile={handleSelectProfile} profiles={profiles} activeProfile={activeProfile}/>
       <hr/>
-      <NavBar activeProfile={activeProfile}/>
-      
+      <NavBar activeProfile={activeProfile}/>      
+
     </div>
   );
 }

@@ -1,0 +1,17 @@
+li, button {
+    padding: .5rem;
+    margin: .2rem;
+    border: 1px solid rgb(223, 223, 223);
+    width: 400px;
+    border-radius: 8px;
+}
+
+li:hover, button:hover {
+    cursor: pointer;
+    background-color: rgb(249, 249, 249)!important;
+}
+
+.question-card {
+    width: 600px;
+    border-radius: 8px;
+}
