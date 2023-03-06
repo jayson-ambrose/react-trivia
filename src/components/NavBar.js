@@ -5,7 +5,7 @@ import SectionThree from "./SectionThree.js";
 const fetchUrl = "https://opentdb.com/api.php?amount=1";
 
 
-function NavBar({activeProfile) {
+function NavBar({activeProfile}) {
   const [questions, setQuestions] = useState([]);
   const [click, setClick] = useState(false);
 
