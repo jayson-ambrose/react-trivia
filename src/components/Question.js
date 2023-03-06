@@ -5,19 +5,11 @@ function Question ({triviaQuestion}) {
     let {question} = triviaQuestion
 
     if (question.includes("&quot;")) {
-        question = question.replaceAll("&quot;", '"')
-
-        fixQuotationMarks(question)
+        question = question.replaceAll("&quot;", '"')        
     }
 
     if (question.includes("&#039;")) {
-        question = question.replaceAll("&#039;", "'")
-
-        fixQuotationMarks(question)
-    }
-
-    function fixQuotationMarks(string){
-        console.log(string)
+        question = question.replaceAll("&#039;", "'")        
     }
 
     function responseType(object) {
