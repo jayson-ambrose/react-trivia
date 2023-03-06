@@ -1,10 +1,18 @@
 import React from 'react'
 
-function ProfileSelect () {
+function ProfileSelect ({ profiles, handleSelectProfile, activeProfile }) {
 
-    
+    const profileList = profiles.map((profile) => <option key={profile.id} value={profile.id}>{profile.username}</option>)
+       
     return (
-        <div>Hello World!</div>
+
+        <div>
+            <p>{activeProfile.username}</p>
+            <select onChange={handleSelectProfile}>
+                <option value="0">Select Profile...</option>
+                {profileList}
+            </select>
+        </div>
     )
 }
 
