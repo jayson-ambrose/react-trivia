@@ -8,15 +8,6 @@ function TrivNightQuestion({trivia}) {
         <div>
             <p>
                 <span>{question}</span>
-                <br/>
-                <span>{correct_answer}</span>
-                <br/>
-                <span>{difficulty}</span>
-                <br/>
-                <span>{incorrect_answers}</span>
-                <br/>
-                <span>{type}</span>
-                <br/>
             </p>
         </div>
     )
