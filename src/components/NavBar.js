@@ -4,11 +4,13 @@ import SectionTwo from "./SectionTwo.js";
 import SectionThree from "./SectionThree.js";
 const fetchUrl = "https://opentdb.com/api.php?amount=1";
 
-function NavBar() {
+
+function NavBar({activeProfile) {
   const [questions, setQuestions] = useState([]);
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
+
 
   const fetchQuery = () => {
     fetch(fetchUrl)
@@ -21,8 +23,10 @@ function NavBar() {
   return (
     <div>
       <Trivia questions={questions} handleClick={handleClick} click={click} />
+      
       {/* <SectionTwo/>
             <SectionThree/> */}
+            
       <button onClick={fetchQuery} className="bg-transparent ms-3 mt-5">
         Random Question Genorator
       </button>
