@@ -17,7 +17,7 @@ function App() {
     username: "",
     collections: [
       {
-        question: "",
+        question: "x",
         correct_answer: "",
         incorrect_answers: [""],
       },

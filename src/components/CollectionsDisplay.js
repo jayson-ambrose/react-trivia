@@ -5,15 +5,16 @@ function CollectionsDisplay({ question }) {
     document.getElementById("questionCard").classList.add("d-block");
     document.getElementById("questionCard").classList.remove("d-none");
   };
+
+  console.log(question.question)
+
   return (
     <>
       <div id="questionCard" className="col-8 d-none">
         <h5>{question.question}</h5>
         <ul className="list-unstyled">
           <li>{question.correct_answer}</li>
-          {question.incorrect_answers.map((incorrectAnswer) => (
-            <li>{incorrectAnswer}</li>
-          ))}
+          {question.incorrect_answers.map((incorrectAnswer) => <li key={incorrectAnswer}>{incorrectAnswer}</li>)}          
         </ul>
       </div>
       <div className="col-4">
