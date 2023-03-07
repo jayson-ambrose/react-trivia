@@ -7,7 +7,7 @@ function TrivNightQuestion({trivia}) {
     return (
         <div>
             <p>
-                <span>{question}</span>
+                {question}
             </p>
         </div>
     )

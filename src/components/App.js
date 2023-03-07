@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from "react";
-import NavBar from "./NavBar";
+import TriviaGame from "./TriviaGame";
+import TriviaNight from "./TriviaNight";
+import Collections from "./Collections";
 import ProfileSelect from "./ProfileSelect.js"
+import {Switch, Route} from "react-router-dom"
+
 
 function App() {
 
@@ -32,8 +36,30 @@ function App() {
     <div className="App">
       
       <ProfileSelect handleSelectProfile={handleSelectProfile} profiles={profiles} activeProfile={activeProfile}/>
+
+      <nav>
+        <a  href="/TriviaGame"><button> Trivia Game </button></a>
+        <a  href="/TriviaNightTool"><button> Trivia Night Tools </button></a>
+        <a  href="/Collections"><button> Collections </button></a>
+      </nav>
+
       <hr/>
-      <NavBar activeProfile={activeProfile}/>      
+
+      <Switch>
+
+        <Route exact path="/TriviaGame">
+        <TriviaGame activeProfile={activeProfile}/>
+        </Route>
+
+        <Route exact path="/TriviaNightTool">
+        <TriviaNight activeProfile={activeProfile}/>  
+        </Route>
+
+        <Route exact path="/Collections">
+        <Collections activeProfile={activeProfile}/> 
+        </Route>
+
+      </Switch>
 
     </div>
   );
