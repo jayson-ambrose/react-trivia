@@ -44,59 +44,17 @@
                       "True"
                     ]
                   }
-        ],
-
-    "high-scores": [
-        {
-            "id": 1,
-            "name": "",
-            "score": 2
+        ]
         },
         {
             "id": 2,
-            "name": "",
-            "score": 3
+            "username": "Dillon",
+            "collections": []
         },
         {
             "id": 3,
-            "name": "",
-            "score": 4
-        },
-        {
-            "id": 4,
-            "name": "",
-            "score": 5
-        },
-        {
-            "id": 5,
-            "name": "",
-            "score": 0
-        },
-        {
-            "id": 6,
-            "name": "",
-            "score": 0
-        },
-        {
-            "id": 7,
-            "name": "",
-            "score": 0
-        },
-        {
-            "id": 8,
-            "name": "",
-            "score": 0
-        },
-        {
-            "id": 9,
-            "name": "",
-            "score": 0
-        },
-        {
-            "id": 10,
-            "name": "",
-            "score": 0
+            "username": "Christian",
+            "collections": []
         }
-
     ]
 }
