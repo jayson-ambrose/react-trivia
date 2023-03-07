@@ -1,40 +1,48 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
-import ProfileSelect from "./ProfileSelect.js"
+import ProfileSelect from "./ProfileSelect.js";
 
 function App() {
+  const profileURL = "http://localhost:3001/profiles";
 
-  const profileURL = "http://localhost:3001/profiles"
-
-  const [profiles, setProfiles] = useState([])
+  const [profiles, setProfiles] = useState([]);
   const [activeProfile, setActiveProfile] = useState({
-    id:0,
-    username:"",
-    collections: []
-  })
-
+    id: 0,
+    username: "",
+    collections: [
+      {
+        question: "",
+        correct_answer: "",
+        incorrect_answers: [""],
+      },
+    ],
+  });
   useEffect(() => {
     fetch(profileURL)
-    .then(resp => resp.json())
-    .then(data => setProfiles(data))
-  }, [])  
+      .then((resp) => resp.json())
+      .then((data) => setProfiles(data));
+  }, []);
 
   const handleSelectProfile = (event) => {
-    if(event.target.value == 0) {
-      return}      
-    const profileToSelect = profiles.find((profile) => profile.id == event.target.value)
-    setActiveProfile(profileToSelect)
-  }
+    const profileToSelect = profiles.find(
+      (profile) => profile.id == event.target.value
+    );
+    console.log(event.target.value);
+    setActiveProfile(profileToSelect);
+  };
 
-  console.log(activeProfile)
+  if (activeProfile === activeProfile) {
+  }
 
   return (
     <div className="App">
-      
-      <ProfileSelect handleSelectProfile={handleSelectProfile} profiles={profiles} activeProfile={activeProfile}/>
-      <hr/>
-      <NavBar activeProfile={activeProfile}/>      
-
+      <ProfileSelect
+        handleSelectProfile={handleSelectProfile}
+        profiles={profiles}
+        activeProfile={activeProfile}
+      />
+      <hr />
+      <NavBar activeProfile={activeProfile} />
     </div>
   );
 }
