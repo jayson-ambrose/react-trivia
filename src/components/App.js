@@ -4,6 +4,7 @@ import TriviaNight from "./TriviaNight";
 import Collections from "./Collections";
 import ProfileSelect from "./ProfileSelect.js"
 import {Switch, Route} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 
 function App() {
@@ -36,9 +37,9 @@ function App() {
       <ProfileSelect handleSelectProfile={handleSelectProfile} profiles={profiles} activeProfile={activeProfile}/>
 
       <nav>
-        <a  href="/TriviaGame"><button> Trivia Game </button></a>
-        <a  href="/TriviaNightTool"><button> Trivia Night Tools </button></a>
-        <a  href="/Collections"><button> Collections </button></a>
+        <Link  to="/TriviaGame"><button> Trivia Game </button></Link>
+        <Link  to="/TriviaNightTool"><button> Trivia Night Tools </button></Link>
+        <Link  to="/Collections"><button> Collections </button></Link>
       </nav>
 
       <hr/>
