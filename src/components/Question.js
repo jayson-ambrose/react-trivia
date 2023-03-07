@@ -3,10 +3,7 @@ import React from "react";
 function Question({ triviaQuestion }) {
   // const heartOutline = <BsHeart />;
   // const fullHeart = <BsFillHeartFill />;
-  console.log(triviaQuestion);
-
   let click = false;
-  console.log(click);
 
   const handleClick = (e) => {
     if (
