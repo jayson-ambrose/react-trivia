@@ -15,3 +15,103 @@ li:hover, button:hover {
     width: 600px;
     border-radius: 8px;
 }
+
+.block {
+  display: block;
+}
+
+.fade-in {
+    animation: fadeIn ease 1s!important;
+    -webkit-animation: fadeIn ease 1s!important;
+    -moz-animation: fadeIn ease 1s!important;
+    -o-animation: fadeIn ease 1s!important;
+    -ms-animation: fadeIn ease 1s!important;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+  }
+}
+
+.fade-out {
+    animation: fadeOut ease 1s!important;
+    -webkit-animation: fadeOut ease 1s!important;
+    -moz-animation: fadeOut ease 1s!important;
+    -o-animation: fadeOut ease 1s!important;
+    -ms-animation: fadeOut ease 1s!important;
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+  @-moz-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+  @-webkit-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+  @-o-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
