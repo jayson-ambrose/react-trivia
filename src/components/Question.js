@@ -1,9 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Question({ triviaQuestion }) {
+function Question( { triviaQuestion , trackScore, trackStrikes, fetchQuery} ) {
   // const heartOutline = <BsHeart />;
   // const fullHeart = <BsFillHeartFill />;
   let click = false;
+  let pointValue;
+
+  function addPoint (difficulty) {
+
+    if (difficulty === "easy") {
+      pointValue = 1
+      console.log(pointValue)
+    } else if (difficulty ==="medium") {
+      pointValue = 2
+      console.log(pointValue)
+    } else if (difficulty ==="hard") {
+      pointValue = 3;
+      console.log(pointValue)
+    }
+
+    trackScore(pointValue)
+    fetchQuery()
+  }
+
+  function addStrike () {
+    console.log("wrong")
+    trackStrikes()
+    fetchQuery()
+  }
 
   const handleClick = (e) => {
     if (
@@ -17,7 +41,6 @@ function Question({ triviaQuestion }) {
   };
 
   const randomOrder = Math.floor(Math.random() * 5) + 1;
-  console.log(randomOrder);
 
   const display =
     triviaQuestion.type === "boolean" ? "none border-0 m-0 p-0" : "d-flex";
@@ -25,8 +48,8 @@ function Question({ triviaQuestion }) {
   const handleAnswer = (e) => {
     console.log(e.target.id);
     e.target.id === "correct"
-      ? alert("Correct!")
-      : alert("I'm sorry, you chose the wrong answer.");
+      ? addPoint(triviaQuestion.difficulty)
+      : addStrike();
   };
 
   return (

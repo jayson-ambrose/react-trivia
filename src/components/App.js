@@ -30,8 +30,6 @@ function App() {
     setActiveProfile(profileToSelect)
   }
 
-  console.log(activeProfile)
-
   return (
     <div className="App">
       
