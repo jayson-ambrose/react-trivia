@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import Trivia from "./Trivia.js";
-import TriviaNight from "./TriviaNight.js";
-import SectionThree from "./SectionThree.js";
-
+import Collections from "./Collections";
 const fetchUrl = "https://opentdb.com/api.php?amount=1";
-
 
 function NavBar({ activeProfile }) {
   const [questions, setQuestions] = useState([]);
@@ -15,17 +12,18 @@ function NavBar({ activeProfile }) {
       .then((data) => setQuestions(data.results));
   };
 
-  console.log(questions);
-
   return (
     <div>
-
+      <div className="fade-out fade-in">
+        <h6>Hello</h6>
+      </div>
       <Trivia questions={questions} />
-      
-      <TriviaNight activeProfile={activeProfile}/>    
+      <Collections activeProfile={activeProfile} />
+
+      {/*   <SectionThree/> */}
 
       <button onClick={fetchQuery} className="bg-transparent ms-3 mt-5">
-        Random Question Generator
+        Random Question Genorator
       </button>
     </div>
   );
