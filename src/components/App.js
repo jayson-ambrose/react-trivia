@@ -13,10 +13,16 @@ function App() {
 
   const [profiles, setProfiles] = useState([])
   const [activeProfile, setActiveProfile] = useState({
-    id:0,
-    username:"",
-    collections: []
-  })
+    id: 0,
+    username: "",
+    collections: [
+      {
+        question: "",
+        correct_answer: "",
+        incorrect_answers: [""],
+      },
+    ],
+  });
 
   useEffect(() => {
     fetch(profileURL)

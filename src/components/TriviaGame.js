@@ -47,8 +47,10 @@ function TriviaGame({activeProfile}) {
     
   }
 
-  function handleHighScores (obj) {
-    console.log(obj)
+  function handleHighScores (scores) {
+    const displayScores = scores.filter((score) => score.score != 0).
+
+    console.log(scores)
   }
 
   function startNewGame () {
