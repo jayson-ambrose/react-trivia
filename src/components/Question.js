@@ -18,13 +18,14 @@ function Question( { triviaQuestion , trackScore, trackStrikes, fetchQuery} ) {
       pointValue = 3;
       console.log(pointValue)
     }
-
+    
+    alert("Correct! " + pointValue + " points get!")
     trackScore(pointValue)
     fetchQuery()
   }
 
   function addStrike () {
-    console.log("wrong")
+    alert("Incorrect, the correct answer was " + triviaQuestion.correct_answer)
     trackStrikes()
     fetchQuery()
   }
@@ -80,6 +81,7 @@ function Question( { triviaQuestion , trackScore, trackStrikes, fetchQuery} ) {
           {triviaQuestion.incorrect_answers[2]}
         </li>
       </ul>
+      <h6>Point Value: {triviaQuestion.difficulty === 'easy' ? "1 point." : triviaQuestion.difficulty === 'medium' ? '2 points.' : '3 points.' }</h6>
       <br />
     </div>
   );
