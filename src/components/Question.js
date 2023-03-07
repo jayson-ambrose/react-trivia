@@ -1,16 +1,11 @@
 import React from "react";
 
 function Question({ triviaQuestion }) {
-  // const heartOutline = <BsHeart />;
-  // const fullHeart = <BsFillHeartFill />;
   console.log(triviaQuestion);
-
-  let click = false;
-  console.log(click);
 
   const handleClick = (e) => {
     if (
-      document.getElementById("notSaved").src ==
+      document.getElementById("notSaved").src ===
       "https://cdn.imgchest.com/files/6yxkcqxkv7w.png"
     ) {
       document.getElementById("notSaved").src =
@@ -38,6 +33,7 @@ function Question({ triviaQuestion }) {
         id="notSaved"
         onClick={handleClick}
         src="https://cdn.imgchest.com/files/6yxkcqxkv7w.png"
+        alt="heart"
         width="25px"
       />
       <h5 className="py-3">{triviaQuestion.question}</h5>
