@@ -12,7 +12,7 @@ function App() {
   const [profiles, setProfiles] = useState([]);
   const [activeProfile, setActiveProfile] = useState({
     id: 0,
-    username: "",
+    username: "Unknown",
     collections: [
       {
         question: "",
@@ -37,6 +37,30 @@ function App() {
     );
     setActiveProfile(profileToSelect);
   };
+
+  const onProfileCreate = (name) => {
+
+    if(name === null || name ==="") {
+      alert("invalid name")
+      return
+    }
+    
+    const newUser = {
+      username: name,
+      collections: []
+    }
+
+    fetch (profileURL, {
+      method: 'POST',
+      headers: {
+        "Content-Type":"application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(newUser)
+    })
+    .then(resp => resp.json())
+    .then(data => setProfiles([...profiles, data]))
+  }
 
   const welcomeBtn = document.getElementById("welcomeBtn");
   const welcomeMsg = document.getElementById("welcomeMsg");
@@ -102,6 +126,7 @@ function App() {
           handleSelectProfile={handleSelectProfile}
           profiles={profiles}
           activeProfile={activeProfile}
+          onProfileCreate={onProfileCreate}
         />
 
         <Switch>

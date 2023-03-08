@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Trivia from "./Trivia.js";
 import Score from "./Score.js";
 import Strikes from "./Strikes.js";
-import { toHaveAccessibleDescription } from "@testing-library/jest-dom/dist/matchers.js";
 import HighScoreSection from "./HighScoreSection.js"
 
 const fetchUrl = "https://opentdb.com/api.php?amount=1";
@@ -34,6 +33,10 @@ function TriviaGame({activeProfile}) {
   const handleGameOver  =  (pts) => {
 
     alert(`GAME OVER, PLEASE TRY AGAIN \n FINAL SCORE: ${pts}`)
+
+    if(score === 0) {
+      return
+    }
 
     const newScore = {
       name : activeProfile.username,
@@ -95,9 +98,9 @@ function TriviaGame({activeProfile}) {
         trackScore={trackScore}
         trackStrikes={trackStrikes}
         fetchQuery={fetchQuery}
-        profileURL={profileURL}
         activeProfile={activeProfile}
       />
+      <HighScoreSection highScores={highScores} />
       <div className="text-center text-white mt-5">
         <a onClick={startNewGame} className="welcomeBtn" href="#">
           <span></span>

@@ -54,7 +54,38 @@
     {
       "id": 3,
       "username": "Christian",
-      "collections": []
+      "collections": [
+        {
+          "category": "Entertainment: Cartoon & Animations",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "Who is the &quot;dumb blonde&quot; character in Nickelodeon&#039;s &quot;The Loud House&quot;?",
+          "correct_answer": "Leni",
+          "incorrect_answers": [
+            "Luan",
+            "Luna",
+            "Lincoln"
+          ]
+        }
+      ]
+    },
+    {
+      "username": "Newb",
+      "collections": [
+        {
+          "category": "Entertainment: Music",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "When did The Beatles release the LP &quot;Please Please Me&quot;?",
+          "correct_answer": "1963",
+          "incorrect_answers": [
+            "1970",
+            "1960",
+            "1969"
+          ]
+        }
+      ],
+      "id": 4
     }
   ],
   "high-scores": [
@@ -64,34 +95,14 @@
       "score": 2
     },
     {
-      "id": 2,
       "name": "Jayson",
-      "score": 7
+      "score": 1,
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Christian",
-      "score": 4
-    },
-    {
-      "name": "Unknown",
-      "score": 0,
-      "id": 4
-    },
-    {
-      "name": "Unknown",
-      "score": 5,
-      "id": 5
-    },
-    {
-      "name": "Jayson",
-      "score": 0,
-      "id": 6
-    },
-    {
-      "name": "Jayson",
-      "score": 7,
-      "id": 7
+      "name": "Newb",
+      "score": 2,
+      "id": 3
     }
   ]
 }

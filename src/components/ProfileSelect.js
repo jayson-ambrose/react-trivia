@@ -1,12 +1,17 @@
 import React from "react";
 
-function ProfileSelect({ profiles, handleSelectProfile, activeProfile }) {
-  console.log(activeProfile.id);
+function ProfileSelect({ profiles, handleSelectProfile, activeProfile, onProfileCreate }) {
+
   const profileList = profiles.map((profile) => (
     <option className="m-3 p-2" key={profile.id} value={profile.id}>
       {profile.username}
     </option>
   ));
+
+  function addProfile() {
+    const newUser = prompt("Please enter your name")
+    onProfileCreate(newUser)
+  }
 
   const hideDefaultValue =
     activeProfile.id === 0
@@ -15,11 +20,12 @@ function ProfileSelect({ profiles, handleSelectProfile, activeProfile }) {
 
   return (
     <div className="d-flex align-items-center">
+      <button onClick={addProfile}>Create Profile</button>
       <select className="m-3 p-2" onChange={handleSelectProfile}>
         {profileList}
       </select>
       <h4 className={hideDefaultValue}>
-        Welcom back, {activeProfile.username}
+        Welcome back, {activeProfile.username}
       </h4>
     </div>
   );
