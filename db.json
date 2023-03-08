@@ -23,39 +23,25 @@
       "username": "Jayson",
       "collections": [
         {
-          "category": "History",
+          "category": "Animals",
           "type": "multiple",
           "difficulty": "medium",
-          "question": "Which Las Vegas casino was originally constructed and operated by mobster Bugsy Siegel?",
-          "correct_answer": "The Flamingo",
+          "question": "What is the collective noun for rats?",
+          "correct_answer": "Mischief",
           "incorrect_answers": [
-            "The MGM Grand",
-            "The Sands",
-            "The Sahara"
+            "Pack",
+            "Race",
+            "Drift"
           ]
         },
         {
-          "category": "General Knowledge",
-          "type": "multiple",
-          "difficulty": "medium",
-          "question": "What is the name of the very first video uploaded to YouTube?",
-          "correct_answer": "Me at the zoo",
+          "category": "Art",
+          "type": "boolean",
+          "difficulty": "easy",
+          "question": "Leonardo da Vinci was not the creator of the Mona Lisa.",
+          "correct_answer": "False",
           "incorrect_answers": [
-            "tribute",
-            "carrie rides a truck",
-            "Her new puppy from great grandpa vern."
-          ]
-        },
-        {
-          "category": "Entertainment: Video Games",
-          "type": "multiple",
-          "difficulty": "medium",
-          "question": "Capcom&#039;s survival horror title Dead Rising, canonically starts on what day of September 2006?",
-          "correct_answer": "September 19th",
-          "incorrect_answers": [
-            "September 21st",
-            "September 30th",
-            "September 14th"
+            "True"
           ]
         }
       ]
@@ -74,53 +60,38 @@
   "high-scores": [
     {
       "id": 1,
-      "name": "",
+      "name": "Dillon",
       "score": 2
     },
     {
       "id": 2,
-      "name": "",
-      "score": 3
+      "name": "Jayson",
+      "score": 7
     },
     {
       "id": 3,
-      "name": "",
+      "name": "Christian",
       "score": 4
     },
     {
-      "id": 4,
-      "name": "",
-      "score": 5
+      "name": "Unknown",
+      "score": 0,
+      "id": 4
     },
     {
-      "id": 5,
-      "name": "",
-      "score": 0
+      "name": "Unknown",
+      "score": 5,
+      "id": 5
     },
     {
-      "id": 6,
-      "name": "",
-      "score": 0
+      "name": "Jayson",
+      "score": 0,
+      "id": 6
     },
     {
-      "id": 7,
-      "name": "",
-      "score": 0
-    },
-    {
-      "id": 8,
-      "name": "",
-      "score": 0
-    },
-    {
-      "id": 9,
-      "name": "",
-      "score": 0
-    },
-    {
-      "id": 10,
-      "name": "",
-      "score": 0
+      "name": "Jayson",
+      "score": 7,
+      "id": 7
     }
   ]
 }
