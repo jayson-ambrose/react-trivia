@@ -1,60 +1,126 @@
 {
-    "profiles": [
+  "profiles": [
+    {
+      "id": 0,
+      "username": "Select User...",
+      "collections": [
         {
-            "id": 0,
-            "username": "Select User...",
-            "collections": [
-                {
-                    "category": "",
-                    "type": "",
-                    "difficulty": "",
-                    "question": "",
-                    "correct_answer": "",
-                    "incorrect_answers": [
-                      "",
-                      "",
-                      ""
-                    ]
-                  }
-        ]
-        },
-        {
-            "id": 1,
-            "username": "Jayson",
-            "collections": [
-                {
-                    "category": "Animals",
-                    "type": "multiple",
-                    "difficulty": "medium",
-                    "question": "What is the collective noun for rats?",
-                    "correct_answer": "Mischief",
-                    "incorrect_answers": [
-                      "Pack",
-                      "Race",
-                      "Drift"
-                    ]
-                  },
-                  {
-                    "category": "Art",
-                    "type": "boolean",
-                    "difficulty": "easy",
-                    "question": "Leonardo da Vinci was not the creator of the Mona Lisa.",
-                    "correct_answer": "False",
-                    "incorrect_answers": [
-                      "True"
-                    ]
-                  }
-        ]
-        },
-        {
-            "id": 2,
-            "username": "Dillon",
-            "collections": []
-        },
-        {
-            "id": 3,
-            "username": "Christian",
-            "collections": []
+          "category": "",
+          "type": "",
+          "difficulty": "",
+          "question": "",
+          "correct_answer": "",
+          "incorrect_answers": [
+            "",
+            "",
+            ""
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "id": 1,
+      "username": "Jayson",
+      "collections": [
+        {
+          "category": "History",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "Which Las Vegas casino was originally constructed and operated by mobster Bugsy Siegel?",
+          "correct_answer": "The Flamingo",
+          "incorrect_answers": [
+            "The MGM Grand",
+            "The Sands",
+            "The Sahara"
+          ]
+        },
+        {
+          "category": "General Knowledge",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "What is the name of the very first video uploaded to YouTube?",
+          "correct_answer": "Me at the zoo",
+          "incorrect_answers": [
+            "tribute",
+            "carrie rides a truck",
+            "Her new puppy from great grandpa vern."
+          ]
+        },
+        {
+          "category": "Entertainment: Video Games",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "Capcom&#039;s survival horror title Dead Rising, canonically starts on what day of September 2006?",
+          "correct_answer": "September 19th",
+          "incorrect_answers": [
+            "September 21st",
+            "September 30th",
+            "September 14th"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "username": "Dillon",
+      "collections": []
+    },
+    {
+      "id": 3,
+      "username": "Christian",
+      "collections": []
+    }
+  ],
+  "high-scores": [
+    {
+      "id": 1,
+      "name": "",
+      "score": 2
+    },
+    {
+      "id": 2,
+      "name": "",
+      "score": 3
+    },
+    {
+      "id": 3,
+      "name": "",
+      "score": 4
+    },
+    {
+      "id": 4,
+      "name": "",
+      "score": 5
+    },
+    {
+      "id": 5,
+      "name": "",
+      "score": 0
+    },
+    {
+      "id": 6,
+      "name": "",
+      "score": 0
+    },
+    {
+      "id": 7,
+      "name": "",
+      "score": 0
+    },
+    {
+      "id": 8,
+      "name": "",
+      "score": 0
+    },
+    {
+      "id": 9,
+      "name": "",
+      "score": 0
+    },
+    {
+      "id": 10,
+      "name": "",
+      "score": 0
+    }
+  ]
 }

@@ -1,36 +1,40 @@
-import React, {useState} from "react";
+import React from "react";
 
-function Question( { triviaQuestion , trackScore, trackStrikes, fetchQuery} ) {
-  // const heartOutline = <BsHeart />;
-  // const fullHeart = <BsFillHeartFill />;
-  let click = false;
+function Question({
+  triviaQuestion,
+  trackScore,
+  trackStrikes,
+  fetchQuery,
+  activeProfile,
+}) {
+  console.log(activeProfile);
   let pointValue;
 
-  function addPoint (difficulty) {
-
+  function addPoint(difficulty) {
     if (difficulty === "easy") {
-      pointValue = 1
-      console.log(pointValue)
-    } else if (difficulty ==="medium") {
-      pointValue = 2
-      console.log(pointValue)
-    } else if (difficulty ==="hard") {
+      pointValue = 1;
+      console.log(pointValue);
+    } else if (difficulty === "medium") {
+      pointValue = 2;
+      console.log(pointValue);
+    } else if (difficulty === "hard") {
       pointValue = 3;
-      console.log(pointValue)
+      console.log(pointValue);
     }
-    
-    alert("Correct! " + pointValue + " points get!")
-    trackScore(pointValue)
-    fetchQuery()
+
+    alert("Correct! " + pointValue + " points get!");
+    trackScore(pointValue);
+    fetchQuery();
   }
 
-  function addStrike () {
-    alert("Incorrect, the correct answer was " + triviaQuestion.correct_answer)
-    trackStrikes()
-    fetchQuery()
+  function addStrike() {
+    alert("Incorrect, the correct answer was " + triviaQuestion.correct_answer);
+    trackStrikes();
+    fetchQuery();
   }
 
   const handleClick = (e) => {
+    const currentProfileId = activeProfile.id;
     if (
       document.getElementById("notSaved").src ==
       "https://cdn.imgchest.com/files/6yxkcqxkv7w.png"
@@ -39,6 +43,17 @@ function Question( { triviaQuestion , trackScore, trackStrikes, fetchQuery} ) {
         "https://cdn.imgchest.com/files/pyvdcn9gbyk.png";
     }
     console.log(e.target.id);
+
+    activeProfile.collections.push(triviaQuestion);
+
+    fetch(`http://localhost:3001/profiles/${currentProfileId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(activeProfile),
+    }).then((response) => response.json());
   };
 
   const randomOrder = Math.floor(Math.random() * 5) + 1;
@@ -54,7 +69,7 @@ function Question( { triviaQuestion , trackScore, trackStrikes, fetchQuery} ) {
   };
 
   return (
-    <div className="question-card ms-3 mt-4 border p-5">
+    <div className="question-card ms-3 mt-4 p-5 ">
       <img
         id="notSaved"
         onClick={handleClick}
@@ -81,7 +96,14 @@ function Question( { triviaQuestion , trackScore, trackStrikes, fetchQuery} ) {
           {triviaQuestion.incorrect_answers[2]}
         </li>
       </ul>
-      <h6>Point Value: {triviaQuestion.difficulty === 'easy' ? "1 point." : triviaQuestion.difficulty === 'medium' ? '2 points.' : '3 points.' }</h6>
+      <h6>
+        Point Value:{" "}
+        {triviaQuestion.difficulty === "easy"
+          ? "1 point."
+          : triviaQuestion.difficulty === "medium"
+          ? "2 points."
+          : "3 points."}
+      </h6>
       <br />
     </div>
   );

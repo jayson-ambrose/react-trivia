@@ -1,8 +1,16 @@
 import React from "react";
 import Question from "./Question";
 
-function Trivia({ questions, handleClick, click , trackScore, fetchQuery, trackStrikes}) {
-
+function Trivia({
+  questions,
+  handleClick,
+  click,
+  trackScore,
+  fetchQuery,
+  trackStrikes,
+  profileURL,
+  activeProfile,
+}) {
   const displayQuestions = questions.map((triviaQuestion) => (
     <Question
       key={triviaQuestion.question}
@@ -12,11 +20,14 @@ function Trivia({ questions, handleClick, click , trackScore, fetchQuery, trackS
       trackScore={trackScore}
       trackStrikes={trackStrikes}
       fetchQuery={fetchQuery}
+      profileURL={profileURL}
+      activeProfile={activeProfile}
     />
-
   ));
 
-  return <div>{displayQuestions}</div>;
+  return (
+    <div className="d-flex justify-content-center">{displayQuestions}</div>
+  );
 }
 
 export default Trivia;

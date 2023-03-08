@@ -1,65 +1,123 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import TriviaGame from "./TriviaGame";
 import TriviaNight from "./TriviaNight";
 import Collections from "./Collections";
-import ProfileSelect from "./ProfileSelect.js"
-import {Switch, Route} from "react-router-dom"
-import {Link} from "react-router-dom"
-
+import ProfileSelect from "./ProfileSelect.js";
+import { Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function App() {
+  const profileURL = "http://localhost:3001/profiles";
 
-  const profileURL = "http://localhost:3001/profiles"
-
-  const [profiles, setProfiles] = useState([])
+  const [profiles, setProfiles] = useState([]);
   const [activeProfile, setActiveProfile] = useState({
-    id:0,
-    username:"",
-    collections: []
-  })
+    id: 0,
+    username: "",
+    collections: [
+      {
+        question: "",
+        correct_answer: "",
+        incorrect_answers: [""],
+      },
+    ],
+  });
 
   useEffect(() => {
     fetch(profileURL)
-    .then(resp => resp.json())
-    .then(data => setProfiles(data))
-  }, [])  
+      .then((resp) => resp.json())
+      .then((data) => setProfiles(data));
+  }, []);
 
   const handleSelectProfile = (event) => {
-    if(event.target.value == 0) {
-      return}      
-    const profileToSelect = profiles.find((profile) => profile.id == event.target.value)
-    setActiveProfile(profileToSelect)
-  }
+    if (event.target.value == 0) {
+      return;
+    }
+    const profileToSelect = profiles.find(
+      (profile) => profile.id == event.target.value
+    );
+    setActiveProfile(profileToSelect);
+  };
+
+  const welcomeBtn = document.getElementById("welcomeBtn");
+  const welcomeMsg = document.getElementById("welcomeMsg");
+  const wrapper = document.getElementById("wrapper");
+
+  const showContent = () => {
+    welcomeBtn.classList.add("opacity-0", "d-none");
+    welcomeMsg.classList.add("opacity-0", "d-none");
+    wrapper.classList.add("mh-0");
+  };
 
   return (
     <div className="App">
-      
-      <ProfileSelect handleSelectProfile={handleSelectProfile} profiles={profiles} activeProfile={activeProfile}/>
+      <div id="wrapper" className="wrapper text-center text-white">
+        <a
+          onClick={showContent}
+          id="welcomeBtn"
+          className="welcomeBtn"
+          href="#"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          WELCOME TO TRIVIA
+        </a>
+        <h5 id="welcomeMsg" className="mt-5 pt-5 fw-lighter welcomeMsg">
+          by: Jayson Ambrose & Christian Hernandez
+        </h5>
+      </div>
 
-      <nav>
-        <Link  to="/TriviaGame"><button> Trivia Game </button></Link>
-        <Link  to="/TriviaNightTool"><button> Trivia Night Tools </button></Link>
-        <Link  to="/Collections"><button> Collections </button></Link>
-      </nav>
+      <div id="mainContent" className="opacity-100">
+        <nav className="m-3">
+          <ul
+            className="list-unstyled d-flex justify-content-center text-center"
+            style={{ marginBottom: "0px" }}
+          >
+            <li className="border-0 mx-5 px-5">
+              <Link to="/TriviaGame">
+                <a href="">Trivia Game</a>
+              </Link>
+            </li>
+            <li className="border-0 mx-5 px-5">
+              <a>
+                <Link to="/TriviaNightTool">
+                  <a href="">Trivia Night Tools</a>
+                </Link>
+              </a>
+            </li>
+            <li className="border-0 mx-5 px-5">
+              <a>
+                <Link to="/Collections">
+                  <a href="">Collections</a>
+                </Link>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-      <hr/>
+        <hr />
 
-      <Switch>
+        <ProfileSelect
+          handleSelectProfile={handleSelectProfile}
+          profiles={profiles}
+          activeProfile={activeProfile}
+        />
 
-        <Route exact path="/TriviaGame">
-        <TriviaGame activeProfile={activeProfile}/>
-        </Route>
+        <Switch>
+          <Route exact path="/TriviaGame">
+            <TriviaGame activeProfile={activeProfile} profileURL={profileURL} />
+          </Route>
 
-        <Route exact path="/TriviaNightTool">
-        <TriviaNight activeProfile={activeProfile}/>  
-        </Route>
+          <Route exact path="/TriviaNightTool">
+            <TriviaNight activeProfile={activeProfile} />
+          </Route>
 
-        <Route exact path="/Collections">
-        <Collections activeProfile={activeProfile}/> 
-        </Route>
-
-      </Switch>
-
+          <Route exact path="/Collections">
+            <Collections activeProfile={activeProfile} />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 }

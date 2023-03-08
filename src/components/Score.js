@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function Score ({score}) {
-    return (
-        <div>POINTS: {score}</div>
-    )
+function Score({ score }) {
+  return <div className="color-turquoise ms-3">POINTS: {score}</div>;
 }
 
 export default Score;
