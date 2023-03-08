@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import TriviaGame from "./TriviaGame";
 import TriviaNight from "./TriviaNight";
 import Collections from "./Collections";
 import ProfileSelect from "./ProfileSelect.js";
-import { Switch, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
+import PlaySound from "./PlaySound.js"
+import mouseClick from "../audio/MouseClick.mp3";
+import audio from "../audio/gameMusic.mp3";
 
 function App() {
   const profileURL = "http://localhost:3001/profiles";
 
   const [profiles, setProfiles] = useState([]);
+  const [playing, setPlaying] = useState(false);
   const [activeProfile, setActiveProfile] = useState({
     id: 0,
     username: "Unknown",
@@ -44,7 +47,7 @@ function App() {
       alert("invalid name")
       return
     }
-    
+
     const newUser = {
       username: name,
       collections: []
@@ -66,7 +69,26 @@ function App() {
   const welcomeMsg = document.getElementById("welcomeMsg");
   const wrapper = document.getElementById("wrapper");
 
+  const mouseClickEffect = useRef(new Audio(mouseClick));
+  const audioRef = useRef(new Audio(audio));
+
+  const play = () => {
+    setPlaying(true);
+    audioRef.current.play();
+    audioRef.volume = .025;
+  };
+
+  const pause = () => {
+    setPlaying(false);
+    audioRef.current.pause();
+    mouseClickEffect.current.pause();
+  };
+
   const showContent = () => {
+    playing
+      ? mouseClickEffect.current.play()
+      : mouseClickEffect.current.pause();
+
     welcomeBtn.classList.add("opacity-0", "d-none");
     welcomeMsg.classList.add("opacity-0", "d-none");
     wrapper.classList.add("mh-0");
@@ -74,6 +96,7 @@ function App() {
 
   return (
     <div className="App">
+      <PlaySound play={play} pause={pause} playing={playing} />
       <div id="wrapper" className="wrapper text-center text-white">
         <a
           onClick={showContent}
@@ -131,7 +154,7 @@ function App() {
 
         <Switch>
           <Route exact path="/TriviaGame">
-            <TriviaGame activeProfile={activeProfile} profileURL={profileURL} />
+            <TriviaGame activeProfile={activeProfile} profileURL={profileURL} playing={playing} />
           </Route>
 
           <Route exact path="/TriviaNightTool">

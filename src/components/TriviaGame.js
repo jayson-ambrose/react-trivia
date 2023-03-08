@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Trivia from "./Trivia.js";
 import Score from "./Score.js";
 import Strikes from "./Strikes.js";
@@ -7,7 +7,7 @@ import HighScoreSection from "./HighScoreSection.js"
 const fetchUrl = "https://opentdb.com/api.php?amount=1";
 const highScoreUrl = "http://localhost:3001/high-scores";
 
-function TriviaGame({activeProfile}) {
+function TriviaGame({activeProfile, mouseClick, playing}) {
 
   const [questions, setQuestions] = useState([]);
   const [click, setClick] = useState(false);
@@ -15,6 +15,7 @@ function TriviaGame({activeProfile}) {
   const [strikes, setStrikes] = useState(0)
   const [highScores, setHighScores] = useState([])
 
+  const mouseClickEffect = useRef(new Audio(mouseClick));
   const handleClick = () => setClick(!click);
 
   useEffect(() => {
@@ -59,19 +60,23 @@ function TriviaGame({activeProfile}) {
     })
     .then(resp => resp.json())
       .then(data => setHighScores([...highScores, data]))
+  } 
+
+  function startNewGame() {
+    playing
+      ? mouseClickEffect.current.play()
+      : mouseClickEffect.current.pause();
+
+    setScore(0);
+    setStrikes(0);
+    fetchQuery();
   }
 
-  function startNewGame () {
-    setScore(0)
-    setStrikes(0)
-    fetchQuery()
-  }  
-
-  const getHighScores = () => {
-    fetch(highScoreUrl)
-    .then(resp => resp.json())
-    .then(data => setHighScores(data))
-  }
+  // const getHighScores = () => {
+  //   fetch(highScoreUrl)
+  //   .then(resp => resp.json())
+  //   .then(data => setHighScores(data))
+  // }
 
   const trackScore = (pts) => {
     setScore(score + pts)
