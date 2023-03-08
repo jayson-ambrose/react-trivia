@@ -14,10 +14,10 @@ function App() {
   const [profiles, setProfiles] = useState([])
   const [activeProfile, setActiveProfile] = useState({
     id: 0,
-    username: "",
+    username: "Unknown",
     collections: [
       {
-        question: "x",
+        question: "",
         correct_answer: "",
         incorrect_answers: [""],
       },

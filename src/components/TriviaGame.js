@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Trivia from "./Trivia.js";
 import Score from "./Score.js"
 import Strikes from "./Strikes.js"
-import { toHaveAccessibleDescription } from "@testing-library/jest-dom/dist/matchers.js";
+import HighScoreSection from "./HighScoreSection.js"
+
 
 const fetchUrl = "https://opentdb.com/api.php?amount=1";
 const highScoreUrl = "http://localhost:3001/high-scores"
@@ -21,7 +22,7 @@ function TriviaGame({activeProfile}) {
   useEffect(() => {
     fetch(highScoreUrl)
     .then(resp => resp.json())
-    .then(data => handleHighScores(data))
+    .then(data => setHighScores(data))
   },[])
 
   const fetchQuery = () => {
@@ -35,22 +36,27 @@ function TriviaGame({activeProfile}) {
 
     alert(`GAME OVER, PLEASE TRY AGAIN \n FINAL SCORE: ${pts}`)
 
+    const newScore = {
+      name : activeProfile.username,
+      score : pts 
+    } 
 
-    console.log(activeProfile.username)
-    //process high score stuff with a patch.
-
-    setScore(0)
     setStrikes(0)
-  }
+    setScore(0)
 
-  function processNewHighScore () {
-    
-  }
+    console.log(highScores)
 
-  function handleHighScores (scores) {
-    const displayScores = scores.filter((score) => score.score != 0).
 
-    console.log(scores)
+    fetch(highScoreUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(newScore)
+    })
+    .then(resp => resp.json())
+      .then(data => setHighScores([...highScores, data]))
   }
 
   function startNewGame () {
@@ -58,6 +64,12 @@ function TriviaGame({activeProfile}) {
     setStrikes(0)
     fetchQuery()
   }  
+
+  const getHighScores = () => {
+    fetch(highScoreUrl)
+    .then(resp => resp.json())
+    .then(data => setHighScores(data))
+  }
 
   const trackScore = (pts) => {
     setScore(score + pts)
@@ -69,7 +81,7 @@ function TriviaGame({activeProfile}) {
 
   if (strikes > 2) {
     handleGameOver(score)
-  }
+  }  
 
   return (
     <div>
@@ -89,6 +101,7 @@ function TriviaGame({activeProfile}) {
       <button onClick={startNewGame} className="bg-transparent ms-3 mt-5">
         Start New Game
       </button>
+      <HighScoreSection highScores={highScores} />
     </div>
   );
 }
