@@ -1,13 +1,18 @@
 import React from 'react'
 
-function TrivNightQuestion({trivia}) {
+function TrivNightQuestion({trivia, handleSelectQuestion}) {
 
-    const {category, correct_answer, difficulty, incorrect_answers, question, type} = trivia
+    const { correct_answer, question } = trivia
+
+    const handleClick = () => {
+        handleSelectQuestion(trivia)
+    }
 
     return (
-        <div>
+        <div onClick={() => handleClick()}>
             <p>
                 {question}
+                ...{correct_answer}
             </p>
         </div> 
     )

@@ -50,6 +50,18 @@
           "incorrect_answers": [
             "True"
           ]
+        },
+        {
+          "category": "Politics",
+          "type": "multiple",
+          "difficulty": "hard",
+          "question": "What year did the effort to deploy the Common Core State Standards (CCSS) in the US begin?",
+          "correct_answer": "2009",
+          "incorrect_answers": [
+            "2012",
+            "2006",
+            "1997"
+          ]
         }
       ]
     },
@@ -180,6 +192,16 @@
       "name": "Unknown",
       "score": 3,
       "id": 16
+    },
+    {
+      "name": "Jayson",
+      "score": 11,
+      "id": 17
+    },
+    {
+      "name": "Unknown",
+      "score": 9,
+      "id": 18
     }
   ]
 }

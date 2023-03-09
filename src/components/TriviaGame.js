@@ -7,7 +7,7 @@ import HighScoreSection from "./HighScoreSection.js";
 const fetchUrl = "https://opentdb.com/api.php?amount=1";
 const highScoreUrl = "http://localhost:3001/high-scores";
 
-function TriviaGame({ activeProfile, mouseClick, playing, mouseClickEffect }) {
+function TriviaGame({ activeProfile, playing, mouseClickEffect }) {
   const [questions, setQuestions] = useState([]);
   const [highScores, setHighScores] = useState([]);
   const [score, setScore] = useState(0);
@@ -54,8 +54,6 @@ function TriviaGame({ activeProfile, mouseClick, playing, mouseClickEffect }) {
       .then((data) => setHighScores([...highScores, data]));
   };
 
-  console.log(playing);
-
   function startNewGame() {
     playing
       ? mouseClickEffect.current.play()
@@ -65,12 +63,6 @@ function TriviaGame({ activeProfile, mouseClick, playing, mouseClickEffect }) {
     setStrikes(0);
     fetchQuery();
   }
-
-  // const getHighScores = () => {
-  //   fetch(highScoreUrl)
-  //   .then(resp => resp.json())
-  //   .then(data => setHighScores(data))
-  // }
 
   const trackScore = (pts) => {
     setScore(score + pts);

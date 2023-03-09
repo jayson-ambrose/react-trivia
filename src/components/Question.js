@@ -7,19 +7,16 @@ function Question({
   fetchQuery,
   activeProfile,
 }) {
-  console.log(activeProfile);
+
   let pointValue;
 
   function addPoint(difficulty) {
     if (difficulty === "easy") {
       pointValue = 1;
-      console.log(pointValue);
     } else if (difficulty === "medium") {
       pointValue = 2;
-      console.log(pointValue);
     } else if (difficulty === "hard") {
       pointValue = 3;
-      console.log(pointValue);
     }
 
     alert("Correct! " + pointValue + " points get!");
@@ -42,7 +39,6 @@ function Question({
       document.getElementById("notSaved").src =
         "https://cdn.imgchest.com/files/pyvdcn9gbyk.png";
     }
-    console.log(e.target.id);
 
     activeProfile.collections.push(triviaQuestion);
 
@@ -62,7 +58,6 @@ function Question({
     triviaQuestion.type === "boolean" ? "none border-0 m-0 p-0" : "d-flex";
 
   const handleAnswer = (e) => {
-    console.log(e.target.id);
     e.target.id === "correct"
       ? addPoint(triviaQuestion.difficulty)
       : addStrike();
