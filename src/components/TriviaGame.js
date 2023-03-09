@@ -29,6 +29,8 @@ function TriviaGame({ activeProfile, mouseClick, playing, mouseClickEffect }) {
     alert(`GAME OVER, PLEASE TRY AGAIN \n FINAL SCORE: ${pts}`);
 
     if (score === 0) {
+      setScore(0);
+      setStrikes(0);
       return;
     }
 

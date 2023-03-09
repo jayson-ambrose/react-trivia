@@ -7,7 +7,7 @@ function CollectionQuestions({ question, handleUpdateDetails }) {
 
   return (
     <>
-      <h5 className="color-turquoise fw-lighter mt-2" onClick={handleClick}>
+      <h5 className="color-turquoise fw-lighter mt-4" onClick={handleClick}>
         {question.question}
       </h5>
     </>
