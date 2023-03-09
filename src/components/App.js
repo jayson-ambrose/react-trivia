@@ -121,18 +121,18 @@ function App() {
           >
             <li className="border-0 mx-5 px-5">
               <Link to="/TriviaGame">
-                <p>Trivia Game</p>
+                <p href="">Trivia Game</p>
               </Link>
             </li>
             <li className="border-0 mx-5 px-5">
-                <Link to="/TriviaNightTool">
-                  <p>Trivia Night Tools</p>
-                </Link>
+              <Link to="/TriviaNightTool">
+                <p href="">Trivia Night Tools</p>
+              </Link>
             </li>
             <li className="border-0 mx-5 px-5">
-                <Link to="/Collections">
-                  <p href="">Collections</p>
-                </Link>
+              <Link to="/Collections">
+                <p href="">Collections</p>
+              </Link>
             </li>
           </ul>
         </nav>
