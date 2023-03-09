@@ -4,22 +4,38 @@ import CollectionQuestionsCard from "./CollectionQuestionsCard";
 
 function Collections({ activeProfile }) {
   const [toggleCard, setToggleCard] = useState(false);
+
+  const [questionData, setQuestionData] = useState({
+    category: "",
+    type: "",
+    difficulty: "",
+    question: "",
+    correct_answer: "",
+    incorrect_answers: ["", "", ""],
+  });
+
   console.log(activeProfile);
 
-  const toggleCardHandle = () => {
-    setToggleCard((toggleCard) => !toggleCard);
-  };
+  // const toggleCardHandle = () => {
+  //   setToggleCard((toggleCard) => !toggleCard);
+  // };
 
-  const collection = activeProfile.collections.map((collection) => (
+  //this should be good
+
+  const collectionQuestions = activeProfile.collections.map((question) => (
     <CollectionQuestions
-      collection={collection}
-      toggleCardHandle={toggleCardHandle}
-      heading={collection.question}
+      key={question.question}
+      question={question}
+      handleUpdateDetails={handleUpdateDetails}
+      // toggleCardHandle={toggleCardHandle}
     />
   ));
 
-  // const collectionQuestionCard = activeProfile.collections.map((collection) => (
-  // ));
+  const collection = activeProfile.collection;
+
+  function handleUpdateDetails(obj) {
+    setQuestionData(obj);
+  }
 
   return (
     <div className="container p-4">
@@ -28,12 +44,9 @@ function Collections({ activeProfile }) {
       </h4>
       <div className="row pt-4">
         <div className="col-8">
-          <CollectionQuestionsCard
-            collection={collection}
-            toggleCard={toggleCard}
-          />
+          <CollectionQuestionsCard questionData={questionData} />
         </div>
-        <div className="col-4"> {collection}</div>
+        <div className="col-4">{collectionQuestions}</div>
       </div>
     </div>
   );
