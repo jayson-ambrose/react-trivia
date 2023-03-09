@@ -4,7 +4,7 @@ import TriviaNight from "./TriviaNight";
 import Collections from "./Collections";
 import ProfileSelect from "./ProfileSelect.js";
 import { Switch, Route, Link } from "react-router-dom";
-import PlaySound from "./PlaySound.js"
+import PlaySound from "./PlaySound.js";
 import mouseClick from "../audio/MouseClick.mp3";
 import audio from "../audio/gameMusic.mp3";
 
@@ -42,28 +42,27 @@ function App() {
   };
 
   const onProfileCreate = (name) => {
-
-    if(name === null || name ==="") {
-      alert("invalid name")
-      return
+    if (name === null || name === "") {
+      alert("invalid name");
+      return;
     }
 
     const newUser = {
       username: name,
-      collections: []
-    }
+      collections: [],
+    };
 
-    fetch (profileURL, {
-      method: 'POST',
+    fetch(profileURL, {
+      method: "POST",
       headers: {
-        "Content-Type":"application/json",
-        Accept: "application/json"
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
-      body: JSON.stringify(newUser)
+      body: JSON.stringify(newUser),
     })
-    .then(resp => resp.json())
-    .then(data => setProfiles([...profiles, data]))
-  }
+      .then((resp) => resp.json())
+      .then((data) => setProfiles([...profiles, data]));
+  };
 
   const welcomeBtn = document.getElementById("welcomeBtn");
   const welcomeMsg = document.getElementById("welcomeMsg");
@@ -75,13 +74,12 @@ function App() {
   const play = () => {
     setPlaying(true);
     audioRef.current.play();
-    audioRef.volume = .025;
+    audioRef.volume = 0.025;
   };
 
   const pause = () => {
     setPlaying(false);
     audioRef.current.pause();
-    mouseClickEffect.current.pause();
   };
 
   const showContent = () => {
@@ -154,7 +152,12 @@ function App() {
 
         <Switch>
           <Route exact path="/TriviaGame">
-            <TriviaGame activeProfile={activeProfile} profileURL={profileURL} playing={playing} />
+            <TriviaGame
+              activeProfile={activeProfile}
+              profileURL={profileURL}
+              playing={playing}
+              mouseClickEffect={mouseClickEffect}
+            />
           </Route>
 
           <Route exact path="/TriviaNightTool">

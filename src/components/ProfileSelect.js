@@ -1,7 +1,11 @@
 import React from "react";
 
-function ProfileSelect({ profiles, handleSelectProfile, activeProfile, onProfileCreate }) {
-
+function ProfileSelect({
+  profiles,
+  handleSelectProfile,
+  activeProfile,
+  onProfileCreate,
+}) {
   const profileList = profiles.map((profile) => (
     <option className="m-3 p-2" key={profile.id} value={profile.id}>
       {profile.username}
@@ -9,24 +13,30 @@ function ProfileSelect({ profiles, handleSelectProfile, activeProfile, onProfile
   ));
 
   function addProfile() {
-    const newUser = prompt("Please enter your name")
-    onProfileCreate(newUser)
+    const newUser = prompt("Please enter your name");
+    onProfileCreate(newUser);
   }
 
   const hideDefaultValue =
     activeProfile.id === 0
       ? "opacity-0"
-      : "opacity-100 m-0 color-turquoise fw-lighter text-center";
+      : "opacity-100 m-0 color-turquoise fw-lighter ms-3 mb-3";
 
   return (
-    <div className="d-flex align-items-center">
-      <button onClick={addProfile}>Create Profile</button>
-      <select className="m-3 p-2" onChange={handleSelectProfile}>
-        {profileList}
-      </select>
-      <h4 className={hideDefaultValue}>
-        Welcome back, {activeProfile.username}
-      </h4>
+    <div>
+      <div className="d-flex align-items-center">
+        <button className="m-3 p-2 createProfileBtn" onClick={addProfile}>
+          Create Profile
+        </button>
+        <select className="ms-0 m-3 p-2" onChange={handleSelectProfile}>
+          {profileList}
+        </select>
+      </div>
+      <div className="playerName">
+        <h4 className={hideDefaultValue}>
+          Welcome back, {activeProfile.username}
+        </h4>
+      </div>
     </div>
   );
 }

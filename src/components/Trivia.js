@@ -3,8 +3,6 @@ import Question from "./Question";
 
 function Trivia({
   questions,
-  handleClick,
-  click,
   trackScore,
   fetchQuery,
   trackStrikes,
@@ -15,8 +13,6 @@ function Trivia({
     <Question
       key={triviaQuestion.question}
       triviaQuestion={triviaQuestion}
-      handleClick={handleClick}
-      click={click}
       trackScore={trackScore}
       trackStrikes={trackStrikes}
       fetchQuery={fetchQuery}

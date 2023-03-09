@@ -93,6 +93,11 @@
         }
       ],
       "id": 4
+    },
+    {
+      "username": "Bob",
+      "collections": [],
+      "id": 5
     }
   ],
   "high-scores": [
@@ -110,6 +115,66 @@
       "name": "Newb",
       "score": 2,
       "id": 3
+    },
+    {
+      "name": "Christian",
+      "score": 2,
+      "id": 4
+    },
+    {
+      "name": "Unknown",
+      "score": 5,
+      "id": 5
+    },
+    {
+      "name": "Jayson",
+      "score": 1,
+      "id": 6
+    },
+    {
+      "name": "Dillon",
+      "score": 5,
+      "id": 7
+    },
+    {
+      "name": "Dillon",
+      "score": 2,
+      "id": 8
+    },
+    {
+      "name": "Dillon",
+      "score": 1,
+      "id": 9
+    },
+    {
+      "name": "Dillon",
+      "score": 2,
+      "id": 10
+    },
+    {
+      "name": "Dillon",
+      "score": 2,
+      "id": 11
+    },
+    {
+      "name": "Unknown",
+      "score": 2,
+      "id": 12
+    },
+    {
+      "name": "Unknown",
+      "score": 3,
+      "id": 13
+    },
+    {
+      "name": "Unknown",
+      "score": 2,
+      "id": 14
+    },
+    {
+      "name": "Unknown",
+      "score": 1,
+      "id": 15
     }
   ]
 }

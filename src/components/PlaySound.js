@@ -1,5 +1,5 @@
 import React from "react";
-import { BsPauseCircle, BsPlayCircleFill } from "react-icons/bs";
+import { IoIosVolumeOff, IoIosVolumeHigh } from "react-icons/io";
 
 function PlaySound({ play, pause, playing }) {
   return (
@@ -8,7 +8,7 @@ function PlaySound({ play, pause, playing }) {
         className="bg-transparent border-0 display-6 position-absolute"
         onClick={playing ? pause : play}
       >
-        {playing ? <BsPauseCircle /> : <BsPlayCircleFill />}
+        {playing ? <IoIosVolumeHigh /> : <IoIosVolumeOff />}
       </button>
     </div>
   );
