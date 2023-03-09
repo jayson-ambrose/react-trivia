@@ -30,6 +30,10 @@ a:hover {
     padding: 0!important;
 }
 
+.h-400 {
+    height: 400px
+}
+
 .mh-0 {
     min-height: 0!important;
     transition: .5s;
@@ -37,6 +41,10 @@ a:hover {
 
 .color-turquoise {
     color: #03e9f4;
+}
+
+.text-shadow-turquoise {
+    text-shadow: 0px 0px 20px #03f4f2;
 }
 
 select {
@@ -49,6 +57,13 @@ select {
     background-color: transparent;
     color: #03e9f4;
     border: 1px solid black;
+}
+
+.saved-question-card {
+    border: 1px solid #03e9f4;
+    background-color: #03e9f4;
+    color: #050801;
+
 }
 
 .question-card {

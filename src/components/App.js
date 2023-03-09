@@ -106,7 +106,7 @@ function App() {
           <span></span>
           <span></span>
           <span></span>
-          WELCOME TO TRIVIA
+          WELCOME TO ZEN TRIVIA
         </a>
         <h5 id="welcomeMsg" className="mt-5 pt-5 fw-lighter welcomeMsg">
           by: Jayson Ambrose & Christian Hernandez
@@ -121,22 +121,18 @@ function App() {
           >
             <li className="border-0 mx-5 px-5">
               <Link to="/TriviaGame">
-                <a href="">Trivia Game</a>
+                <p href="">Trivia Game</p>
               </Link>
             </li>
             <li className="border-0 mx-5 px-5">
-              <a>
-                <Link to="/TriviaNightTool">
-                  <a href="">Trivia Night Tools</a>
-                </Link>
-              </a>
+              <Link to="/TriviaNightTool">
+                <p href="">Trivia Night Tools</p>
+              </Link>
             </li>
             <li className="border-0 mx-5 px-5">
-              <a>
-                <Link to="/Collections">
-                  <a href="">Collections</a>
-                </Link>
-              </a>
+              <Link to="/Collections">
+                <p href="">Collections</p>
+              </Link>
             </li>
           </ul>
         </nav>
