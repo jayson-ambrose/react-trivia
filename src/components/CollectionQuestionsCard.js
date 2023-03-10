@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function CollectionQuestionsCard({ questionData, activeProfile }) {
-  console.log(questionData);
+function CollectionQuestionsCard({ questionData, deleteCollectionItem}) {
+
   const [showQuestionAnswer, setShowQuestionAnswer] = useState(false);
   const display =
     questionData.type === "boolean" ? "none border-0 m-0 p-0" : "d-flex";
@@ -21,22 +21,7 @@ function CollectionQuestionsCard({ questionData, activeProfile }) {
   const toggleButtonText = showQuestionAnswer ? "Hide Answer" : "Show Answer?";
 
   const handleClick = () => {
-    const currentProfileId = activeProfile.id;
-    const removeArry = activeProfile.collections;
-    const removeIndex = removeArry.indexOf(currentProfileId);
-
-    removeArry.splice(removeIndex, 1);
-
-    activeProfile.collections = removeArry;
-
-    fetch(`http://localhost:3001/profiles/${currentProfileId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        body: JSON.stringify(activeProfile),
-      },
-    });
+    deleteCollectionItem()
   };
 
   return (

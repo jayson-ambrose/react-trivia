@@ -25,6 +25,8 @@ function App() {
     ],
   });
 
+
+
   useEffect(() => {
     fetch(profileURL)
       .then((resp) => resp.json())
@@ -82,6 +84,10 @@ function App() {
     setPlaying(false);
     audioRef.current.pause();
   };
+
+  const updateActiveProfile = (obj) => {
+    setActiveProfile(obj)
+  }
 
   const showContent = () => {
     playing
@@ -163,7 +169,7 @@ function App() {
           </Route>
 
           <Route exact path="/Collections">
-            <Collections activeProfile={activeProfile} />
+            <Collections activeProfile={activeProfile} updateActiveProfile={updateActiveProfile}/>
           </Route>
         </Switch>
       </div>
