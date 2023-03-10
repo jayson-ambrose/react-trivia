@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CollectionQuestions from "./CollectionQuestions";
 import CollectionQuestionsCard from "./CollectionQuestionsCard";
 
-function Collections({ activeProfile }) {
+function Collections({ activeProfile, updateActiveProfile }) {
   const [showCard, setShowCard] = useState(false);
   const [questionData, setQuestionData] = useState({
     category: "",
@@ -12,6 +12,7 @@ function Collections({ activeProfile }) {
     correct_answer: "",
     incorrect_answers: ["", "", ""],
   });
+  const [collection, setCollection] = useState([])
 
   console.log(activeProfile);
   console.log(questionData)
@@ -55,7 +56,8 @@ function Collections({ activeProfile }) {
       question: "",
       correct_answer: "",
       incorrect_answers: ["", "", ""],
-    })) 
+    }))
+    .then(setShowCard(false)) 
 
    //setShowCard(false) <---should make card disappear until another list item is clicked, this solves multiple delete issue.
 
@@ -92,7 +94,6 @@ function Collections({ activeProfile }) {
         <div className="col col-lg-4 mt-4 mt-lg-0 overflow-y-scroll h-lg-100 h-400">
           {collectionQuestions}
         </div>
-        <div className="col-4">{collectionQuestions}</div>
       </div>
     </div>
   );

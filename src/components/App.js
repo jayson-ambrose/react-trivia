@@ -169,7 +169,9 @@ function App() {
           </Route>
 
           <Route exact path="/Collections">
-            <Collections activeProfile={activeProfile} updateActiveProfile={updateActiveProfile}/>
+            <Collections 
+              activeProfile={activeProfile} 
+              updateActiveProfile={updateActiveProfile}/>
           </Route>
         </Switch>
       </div>
