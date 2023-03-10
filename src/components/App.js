@@ -18,6 +18,7 @@ function App() {
     username: "Unknown",
     collections: [],
   });
+  const [newUserText, setNewUserText] = useState("")
 
   useEffect(() => {
     fetch(profileURL)
@@ -30,6 +31,7 @@ function App() {
     if (string === undefined) {
       return
     }
+    
     const fixedString = string
       .replaceAll('&uacute;', "ú" )
       .replaceAll('&oacute;', "ó")
@@ -53,7 +55,7 @@ function App() {
 
   const onProfileCreate = (name) => {
 
-    if (name === null || name === "") {
+    if (name === null || name === "" || name === undefined) {
       alert("invalid name");
       return;
     }
@@ -112,6 +114,12 @@ function App() {
     mainContent.classList.remove("d-none");
   };
 
+  const handleNewUserChange = (event) => {
+    setNewUserText(event.target.value)
+  }
+
+  console.log(newUserText)
+
   return (
     <div className="App">
       <PlaySound play={play} pause={pause} playing={playing} />
@@ -164,6 +172,8 @@ function App() {
           profiles={profiles}
           activeProfile={activeProfile}
           onProfileCreate={onProfileCreate}
+          newUserText={newUserText}
+          handleNewUserChange={handleNewUserChange}
         />
 
         <Switch>

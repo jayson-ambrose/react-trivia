@@ -5,6 +5,8 @@ function ProfileSelect({
   handleSelectProfile,
   activeProfile,
   onProfileCreate,
+  handleNewUserChange,
+  newUserText
 }) {
   const profileList = profiles.map((profile) => (
     <option className="m-3 p-2" key={profile.id} value={profile.id}>
@@ -12,9 +14,9 @@ function ProfileSelect({
     </option>
   ));
 
-  function addProfile() {
-    const newUser = prompt("Please enter your name");
-    onProfileCreate(newUser);
+  function addProfile(event) {
+    event.preventDefault()
+    onProfileCreate(newUserText);
   }
 
   const hideDefaultValue =
@@ -25,9 +27,12 @@ function ProfileSelect({
   return (
     <div>
       <div className="d-flex align-items-center">
-        <button className="m-3 p-2 createProfileBtn" onClick={addProfile}>
-          Create Profile
-        </button>
+        <form onSubmit={addProfile}>
+          <input type='text' placeholder="Enter new username" onChange={handleNewUserChange}  value={newUserText}></input>
+          <button type="submit" className="m-3 p-2 createProfileBtn">
+            Create Profile
+          </button>
+        </form>
         <select className="ms-0 m-3 p-2" onChange={handleSelectProfile}>
           <option className="m-3 p-2" key="blank" value="0">Select Profile...</option>
           {profileList}

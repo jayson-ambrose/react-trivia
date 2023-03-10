@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import TrivNightCat from './TrivNightCat'
 import TrivNightList from './TrivNightList'
 import TrivNightSearch from './TrivNightSearch'
-import TrivNightDetailsCard from './TrivNightDetailsCard'
 
 function TriviaNight ({decodeString}) {
 

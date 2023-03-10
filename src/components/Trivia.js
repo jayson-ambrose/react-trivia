@@ -10,7 +10,10 @@ function Trivia({
   activeProfile,
   decodeString
 }) {
+  //This component maps the question into its rendering component and passes down required props.
+
   const displayQuestions = questions.map((triviaQuestion) => (
+
     <Question
       key={triviaQuestion.question}
       triviaQuestion={triviaQuestion}

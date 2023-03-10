@@ -15,6 +15,28 @@
             "Au Revoir",
             "Salir"
           ]
+        },
+        {
+          "category": "Science: Computers",
+          "type": "boolean",
+          "difficulty": "medium",
+          "question": "Early RAM was directly seated onto the motherboard and could not be easily removed.",
+          "correct_answer": "True",
+          "incorrect_answers": [
+            "False"
+          ]
+        },
+        {
+          "category": "Entertainment: Video Games",
+          "type": "multiple",
+          "difficulty": "easy",
+          "question": "What was Frank West&#039;s job in &quot;Dead Rising&quot;?",
+          "correct_answer": "Photojournalist",
+          "incorrect_answers": [
+            "Janitor",
+            "Chef",
+            "Taxi Driver"
+          ]
         }
       ]
     },
@@ -62,6 +84,24 @@
       "username": "Christian",
       "collections": [],
       "id": 6
+    },
+    {
+      "username": "Tacos",
+      "collections": [
+        {
+          "category": "Sports",
+          "type": "multiple",
+          "difficulty": "hard",
+          "question": "What is &ldquo;The Sport of Kings&rdquo;?",
+          "correct_answer": "Horse Racing",
+          "incorrect_answers": [
+            "Chess",
+            "Jousting",
+            "Fencing"
+          ]
+        }
+      ],
+      "id": 7
     }
   ],
   "high-scores": [
@@ -179,6 +219,31 @@
       "name": "Jayson",
       "score": 3,
       "id": 23
+    },
+    {
+      "name": "Unknown",
+      "score": 6,
+      "id": 24
+    },
+    {
+      "name": "Jayson",
+      "score": 1,
+      "id": 25
+    },
+    {
+      "name": "Jayson",
+      "score": 4,
+      "id": 26
+    },
+    {
+      "name": "Unknown",
+      "score": 1,
+      "id": 27
+    },
+    {
+      "name": "Unknown",
+      "score": 3,
+      "id": 28
     }
   ]
 }

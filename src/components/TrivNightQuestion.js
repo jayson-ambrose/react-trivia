@@ -2,7 +2,7 @@ import React from "react";
 const entities = require("entities");
 
 function TrivNightQuestion({ trivia, handleSelectQuestion, showToolCatCard }) {
-  const { correct_answer, question } = trivia;
+  const {  question } = trivia;
 
   const handleClick = () => {
     handleSelectQuestion(trivia);

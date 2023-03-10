@@ -10,10 +10,6 @@ function Question({
   decodeString
 }) {
 
-  const {incorrect_answers} = triviaQuestion
-
-  console.log(incorrect_answers)
-
   let pointValue;
 
   function addPoint(difficulty) {
@@ -78,7 +74,7 @@ function Question({
       ? addPoint(triviaQuestion.difficulty)
       : addStrike();
   };
-
+ 
   return (
     <div className="question-card p-4">
       <img
