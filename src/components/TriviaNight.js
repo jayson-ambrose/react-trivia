@@ -4,12 +4,12 @@ import TrivNightList from './TrivNightList'
 import TrivNightSearch from './TrivNightSearch'
 import TrivNightDetailsCard from './TrivNightDetailsCard'
 
-function TriviaNight () {
+function TriviaNight ({decodeString}) {
+
     const [catState, setCatState] = useState("0")
     const [amount, setAmount] = useState(10)
     const [questList, setQuestList] = useState([])
     const [search, setSearch] = useState("")
-    const [filter, setFilter] = useState ("")
     
     const handleSearch = (value) => {
         setSearch(value)
@@ -42,7 +42,7 @@ function TriviaNight () {
             />
             <TrivNightList 
                 questList={questList.filter((question) => question.question.includes(search))}
-                
+                decodeString={decodeString}                
             />
         </div>
     )

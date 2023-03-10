@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TrivNightQuestion from "./TrivNightQuestion";
 import TrivNightDetailsCard from "./TrivNightDetailsCard";
 
-function TrivNightList({ questList }) {
+function TrivNightList({ questList, decodeString }) {
   const [selectedQuestion, setSelectedQuestion] = useState({
     category: "",
     type: "",
@@ -12,10 +12,8 @@ function TrivNightList({ questList }) {
     incorrect_answers: ["", "", ""],
   });
   const [showToolCard, setShowToolCard] = useState(false);
-  console.log(showToolCard);
 
   const handleSelectQuestion = (obj) => {
-    console.log(obj);
     setSelectedQuestion(obj);
   };
 
@@ -39,6 +37,7 @@ function TrivNightList({ questList }) {
       <TrivNightDetailsCard
         selectedQuestion={selectedQuestion}
         showToolCard={showToolCard}
+        decodeString={decodeString}
       />
       <h3 className="py-2">Questions</h3>
       <div className="text-white my-1 overflow-y-scroll h-345 mt-4">

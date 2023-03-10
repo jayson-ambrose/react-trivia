@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import CollectionQuestions from "./CollectionQuestions";
 import CollectionQuestionsCard from "./CollectionQuestionsCard";
 
-function Collections({ activeProfile, updateActiveProfile }) {
+function Collections({ activeProfile, updateActiveProfile , decodeString}) {
+
   const [showCard, setShowCard] = useState(false);
   const [questionData, setQuestionData] = useState({
     category: "",
@@ -88,7 +89,8 @@ function Collections({ activeProfile, updateActiveProfile }) {
           <CollectionQuestionsCard
             questionData={questionData}
             activeProfile={activeProfile}
-            deleteCollectionItem={deleteCollectionItem}            
+            deleteCollectionItem={deleteCollectionItem}  
+            decodeString={decodeString}          
           />
         </div>
         <div className="col col-lg-4 mt-4 mt-lg-0 overflow-y-scroll h-lg-100 h-400">

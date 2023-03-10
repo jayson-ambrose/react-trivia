@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const entities = require("entities");
 
-function CollectionQuestionsCard({ questionData, deleteCollectionItem }) {
+function CollectionQuestionsCard({ questionData, deleteCollectionItem, decodeString }) {
   const [showQuestionAnswer, setShowQuestionAnswer] = useState(false);
   const display =
     questionData.type === "boolean" ? "none border-0 m-0 p-0" : "d-flex";
@@ -45,19 +45,19 @@ function CollectionQuestionsCard({ questionData, deleteCollectionItem }) {
         <ul className="list-unstyled d-flex flex-column">
           <li id="correct" className="d-flex">
             <span className="me-2">A:</span>
-            <p style={{ order: randomOrder }}>{questionData.correct_answer}</p>
+            <p style={{ order: randomOrder }}>{decodeString(questionData.correct_answer)}</p>
           </li>
           <li className="d-flex">
             <span className="me-2">B: </span>
-            <p style={{ order: 1 }}>{questionData.incorrect_answers[0]}</p>
+            <p style={{ order: 1 }}>{decodeString(questionData.incorrect_answers[0])}</p>
           </li>
           <li className={display}>
             <span className={showSpan}>C: </span>
-            <p style={{ order: 2 }}>{questionData.incorrect_answers[1]}</p>
+            <p style={{ order: 2 }}>{decodeString(questionData.incorrect_answers[1])}</p>
           </li>
           <li className={display}>
             <span className={showSpan}>D: </span>
-            <p style={{ order: 3 }}>{questionData.incorrect_answers[2]}</p>
+            <p style={{ order: 3 }}>{decodeString(questionData.incorrect_answers[2])}</p>
           </li>
         </ul>
         <div className="d-flex align-items-center">
@@ -65,7 +65,7 @@ function CollectionQuestionsCard({ questionData, deleteCollectionItem }) {
             {toggleButtonText}
           </button>
           <h5 className="mt-4 ms-1">:</h5>
-          <h5 className={displayAnswerToggle}>{questionData.correct_answer}</h5>
+          <h5 className={displayAnswerToggle}>{decodeString(questionData.correct_answer)}</h5>
         </div>
       </div>
     </div>

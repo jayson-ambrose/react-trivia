@@ -12,15 +12,15 @@
           ]
         },
         {
-          "category": "Entertainment: Video Games",
+          "category": "Entertainment: Music",
           "type": "multiple",
           "difficulty": "medium",
-          "question": "Who created Agent 47 in the game series &quot;Hitman&quot;?",
-          "correct_answer": "Dr. Otto Wolfgang Ort-Meyer",
+          "question": "The Who&#039;s eponymous line, &quot;Teenage Wasteland&quot;, appears in which of their songs?",
+          "correct_answer": "Baba O&#039; Riley",
           "incorrect_answers": [
-            "Professor Hertz Amadeus Schneider",
-            "Dr. Josef Mengele",
-            "Professor Otto Rothwinkler"
+            "The Seeker",
+            "Won&#039;t Get Fooled Again",
+            "Pinball Wizard"
           ]
         }
       ]
@@ -28,7 +28,20 @@
     {
       "id": 1,
       "username": "Jayson",
-      "collections": []
+      "collections": [
+        {
+          "category": "General Knowledge",
+          "type": "multiple",
+          "difficulty": "easy",
+          "question": "How would one say goodbye in Spanish?",
+          "correct_answer": "Adi&oacute;s",
+          "incorrect_answers": [
+            " Hola",
+            "Au Revoir",
+            "Salir"
+          ]
+        }
+      ]
     },
     {
       "id": 2,

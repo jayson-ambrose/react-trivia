@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const entities = require("entities");
 
-function TrivNightDetailsCard({ selectedQuestion, showToolCard }) {
+function TrivNightDetailsCard({ selectedQuestion, showToolCard, decodeString }) {
   const {
     category,
     correct_answer,
@@ -11,7 +11,6 @@ function TrivNightDetailsCard({ selectedQuestion, showToolCard }) {
     type,
   } = selectedQuestion;
   const [showQuestionAnswer, setShowQuestionAnswer] = useState(false);
-  console.log(showToolCard);
 
   const showAnswer = () => {
     setShowQuestionAnswer((showQuestionAnswer) => !showQuestionAnswer);
@@ -45,19 +44,19 @@ function TrivNightDetailsCard({ selectedQuestion, showToolCard }) {
           <ul className="list-unstyled d-flex flex-column">
             <li id="correct" className="d-flex">
               <span className="me-2">A:</span>
-              <p style={{ order: 1 }}>{correct_answer}</p>
+              <p style={{ order: 1 }}>{decodeString(correct_answer)}</p>
             </li>
             <li className="d-flex">
               <span className="me-2">B: </span>
-              <p style={{ order: 1 }}>{incorrect_answers[0]}</p>
+              <p style={{ order: 1 }}>{decodeString(incorrect_answers[0])}</p>
             </li>
             <li className={display}>
               <span className={showSpan}>C: </span>
-              <p style={{ order: 2 }}>{incorrect_answers[1]}</p>
+              <p style={{ order: 2 }}>{decodeString(incorrect_answers[1])}</p>
             </li>
             <li className={display}>
               <span className={showSpan}>D: </span>
-              <p style={{ order: 3 }}>{incorrect_answers[2]}</p>
+              <p style={{ order: 3 }}>{decodeString(incorrect_answers[2])}</p>
             </li>
           </ul>
           <div className="d-flex align-items-center">
@@ -65,7 +64,7 @@ function TrivNightDetailsCard({ selectedQuestion, showToolCard }) {
               {toggleButtonText}
             </button>
             <h5 className="mt-4 ms-1">:</h5>
-            <h5 className={displayAnswerToggle}>{correct_answer}</h5>
+            <h5 className={displayAnswerToggle}>{decodeString(correct_answer)}</h5>
           </div>
         </div>
       </div>

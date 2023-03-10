@@ -7,7 +7,13 @@ function Question({
   trackStrikes,
   fetchQuery,
   activeProfile,
+  decodeString
 }) {
+
+  const {incorrect_answers} = triviaQuestion
+
+  console.log(incorrect_answers)
+
   let pointValue;
 
   function addPoint(difficulty) {
@@ -29,6 +35,20 @@ function Question({
     trackStrikes();
     fetchQuery();
   }
+
+  // function decodeString(string) {
+  //   if (string === undefined) {
+  //     return
+  //   }
+  //   const fixedString = string
+  //     .replaceAll('&uacute;', "ú" )
+  //     .replaceAll('&oacute;', "ó")
+  //     .replaceAll('&atilde;', 'ã')
+  //     .replaceAll('&quot;', '"')
+  //     .replaceAll('&#039;', "'")
+
+  //     return fixedString
+  // }
 
   const handleClick = (e) => {
     const currentProfileId = activeProfile.id;
@@ -82,16 +102,16 @@ function Question({
           onClick={handleAnswer}
           style={{ order: randomOrder }}
         >
-          {triviaQuestion.correct_answer}
+          {decodeString(triviaQuestion.correct_answer)}
         </li>
         <li className="d-flex pb-1" onClick={handleAnswer} style={{ order: 1 }}>
-          {triviaQuestion.incorrect_answers[0]}
+          {decodeString(triviaQuestion.incorrect_answers[0])}
         </li>
         <li className={display} onClick={handleAnswer} style={{ order: 2 }}>
-          {triviaQuestion.incorrect_answers[1]}
+          {decodeString(triviaQuestion.incorrect_answers[1])}
         </li>
         <li className={display} onClick={handleAnswer} style={{ order: 3 }}>
-          {triviaQuestion.incorrect_answers[2]}
+          {decodeString(triviaQuestion.incorrect_answers[2])}
         </li>
       </ul>
       <h6 className="text-end mt-5">

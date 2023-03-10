@@ -12,7 +12,6 @@ function TrivNightQuestion({ trivia, handleSelectQuestion, showToolCatCard }) {
     <div onClick={() => handleClick()}>
       <h4 onClick={showToolCatCard} className="mb-4">
         {entities.decodeHTML(question)}
-        ...{entities.decodeHTML(correct_answer)}
       </h4>
     </div>
   );

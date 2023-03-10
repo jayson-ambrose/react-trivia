@@ -8,6 +8,7 @@ function Trivia({
   trackStrikes,
   profileURL,
   activeProfile,
+  decodeString
 }) {
   const displayQuestions = questions.map((triviaQuestion) => (
     <Question
@@ -18,11 +19,14 @@ function Trivia({
       fetchQuery={fetchQuery}
       profileURL={profileURL}
       activeProfile={activeProfile}
+      decodeString={decodeString}
     />
   ));
 
   return (
-    <div className="d-flex justify-content-center">{displayQuestions}</div>
+    <div className="d-flex justify-content-center">
+      {displayQuestions}
+    </div>
   );
 }
 

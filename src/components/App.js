@@ -31,6 +31,22 @@ function App() {
       .then((data) => setProfiles(data));
   }, []);
 
+  //This function is passed throughout the app to check for specific character sequences in sensitive areas and correct them.
+  function decodeString(string) {
+    if (string === undefined) {
+      return
+    }
+    const fixedString = string
+      .replaceAll('&uacute;', "ú" )
+      .replaceAll('&oacute;', "ó")
+      .replaceAll('&atilde;', 'ã')
+      .replaceAll('&eacute;', 'é')
+      .replaceAll('&quot;', '"')
+      .replaceAll('&#039;', "'")
+
+      return fixedString
+  }
+  
   const handleSelectProfile = (event) => {
     if (event.target.value == 0) {
       return;
@@ -42,6 +58,7 @@ function App() {
   };
 
   const onProfileCreate = (name) => {
+    
     if (name === null || name === "") {
       alert("invalid name");
       return;
@@ -72,6 +89,7 @@ function App() {
   const mouseClickEffect = useRef(new Audio(mouseClick));
   const audioRef = useRef(new Audio(audio));
 
+  //these next two functions allow for optional music and on-click sounds
   const play = () => {
     setPlaying(true);
     audioRef.current.play();
@@ -83,10 +101,12 @@ function App() {
     audioRef.current.pause();
   };
 
+  //sets the active profile in the event that state needs to be updated to reflect changes to the active profile object
   const updateActiveProfile = (obj) => {
     setActiveProfile(obj);
   };
 
+  //this function relates to the opening splash-screen
   const showContent = () => {
     playing
       ? mouseClickEffect.current.play()
@@ -155,6 +175,7 @@ function App() {
         <Switch>
           <Route exact path="/TriviaGame">
             <TriviaGame
+              decodeString={decodeString}
               activeProfile={activeProfile}
               profileURL={profileURL}
               playing={playing}
@@ -163,13 +184,14 @@ function App() {
           </Route>
 
           <Route exact path="/TriviaNightTool">
-            <TriviaNight activeProfile={activeProfile} />
+            <TriviaNight activeProfile={activeProfile} decodeString={decodeString} />
           </Route>
 
           <Route exact path="/Collections">
             <Collections
               activeProfile={activeProfile}
               updateActiveProfile={updateActiveProfile}
+              decodeString={decodeString}
             />
           </Route>
         </Switch>
