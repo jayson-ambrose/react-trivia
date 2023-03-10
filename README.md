@@ -29,3 +29,6 @@ As a student, I will be able to generate questions at random or in lists and sav
 
 https://cdn.imgchest.com/files/l7lxcx3rx7o.png
 
+## Code Written By
+
+Jayson Ambrose and Christian Hernandez
