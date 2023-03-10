@@ -1,4 +1,5 @@
 import React from "react";
+const entities = require("entities");
 
 function TrivNightQuestion({ trivia, handleSelectQuestion, showToolCatCard }) {
   const { correct_answer, question } = trivia;
@@ -10,8 +11,8 @@ function TrivNightQuestion({ trivia, handleSelectQuestion, showToolCatCard }) {
   return (
     <div onClick={() => handleClick()}>
       <h4 onClick={showToolCatCard} className="mb-4">
-        {question}
-        ...{correct_answer}
+        {entities.decodeHTML(question)}
+        ...{entities.decodeHTML(correct_answer)}
       </h4>
     </div>
   );

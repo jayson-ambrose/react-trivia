@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const entities = require("entities");
 
 function TrivNightDetailsCard({ selectedQuestion, showToolCard }) {
   const {
@@ -37,7 +38,7 @@ function TrivNightDetailsCard({ selectedQuestion, showToolCard }) {
         <span className="opacity-0">placeholder</span>
         <div>
           <h3>Question</h3>
-          <h4 className="m-0 p-0">{question}</h4>
+          <h4 className="m-0 p-0">{entities.decodeHTML(question)}</h4>
           <h6 className="m-0">Category: {category}</h6>
           <h6 className="m-0">Difficulty: {difficulty}</h6>
           <hr />

@@ -25,8 +25,6 @@ function App() {
     ],
   });
 
-
-
   useEffect(() => {
     fetch(profileURL)
       .then((resp) => resp.json())
@@ -86,8 +84,8 @@ function App() {
   };
 
   const updateActiveProfile = (obj) => {
-    setActiveProfile(obj)
-  }
+    setActiveProfile(obj);
+  };
 
   const showContent = () => {
     playing
@@ -169,9 +167,10 @@ function App() {
           </Route>
 
           <Route exact path="/Collections">
-            <Collections 
-              activeProfile={activeProfile} 
-              updateActiveProfile={updateActiveProfile}/>
+            <Collections
+              activeProfile={activeProfile}
+              updateActiveProfile={updateActiveProfile}
+            />
           </Route>
         </Switch>
       </div>

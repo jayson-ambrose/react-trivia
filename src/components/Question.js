@@ -1,4 +1,5 @@
 import React from "react";
+const entities = require("entities");
 
 function Question({
   triviaQuestion,
@@ -72,7 +73,7 @@ function Question({
         width="25px"
       />
       <h3>Question</h3>
-      <h4 className="py-0">{triviaQuestion.question}</h4>
+      <h4 className="py-0">{entities.decodeHTML(triviaQuestion.question)}</h4>
       <hr></hr>
       <ul className="list-unstyled d-flex flex-column">
         <li

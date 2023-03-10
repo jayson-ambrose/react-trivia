@@ -253,7 +253,8 @@ a:nth-child(1) {
   }
 
   /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
+  *::-webkit-scrollba
+  r {
     width: 12px;
   }
 

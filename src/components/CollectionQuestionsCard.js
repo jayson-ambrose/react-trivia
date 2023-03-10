@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+const entities = require("entities");
 
-function CollectionQuestionsCard({ questionData, deleteCollectionItem}) {
-
+function CollectionQuestionsCard({ questionData, deleteCollectionItem }) {
   const [showQuestionAnswer, setShowQuestionAnswer] = useState(false);
   const display =
     questionData.type === "boolean" ? "none border-0 m-0 p-0" : "d-flex";
@@ -21,7 +21,7 @@ function CollectionQuestionsCard({ questionData, deleteCollectionItem}) {
   const toggleButtonText = showQuestionAnswer ? "Hide Answer" : "Show Answer?";
 
   const handleClick = () => {
-    deleteCollectionItem()
+    deleteCollectionItem();
   };
 
   return (
@@ -36,7 +36,9 @@ function CollectionQuestionsCard({ questionData, deleteCollectionItem}) {
           width="25px"
         />
         <h3>Question</h3>
-        <h4 className="m-0 p-0">{questionData.question}</h4>
+        <h4 className="m-0 p-0">
+          {entities.decodeHTML(questionData.question)}
+        </h4>
         <h6 className="m-0">Category: {questionData.category}</h6>
         <h6 className="m-0">Difficulty: {questionData.difficulty}</h6>
         <hr />

@@ -37,20 +37,7 @@
     },
     {
       "username": "Newb",
-      "collections": [
-        {
-          "category": "Entertainment: Music",
-          "type": "multiple",
-          "difficulty": "medium",
-          "question": "When did The Beatles release the LP &quot;Please Please Me&quot;?",
-          "correct_answer": "1963",
-          "incorrect_answers": [
-            "1970",
-            "1960",
-            "1969"
-          ]
-        }
-      ],
+      "collections": [],
       "id": 4
     },
     {
@@ -60,30 +47,7 @@
     },
     {
       "username": "Christian",
-      "collections": [
-        {
-          "category": "Entertainment: Video Games",
-          "type": "multiple",
-          "difficulty": "medium",
-          "question": "Which Crypt of the NecroDancer (2015) character has a soundtrack by Jake &quot;Virt&quot; Kaufman?",
-          "correct_answer": "Uncle Eli",
-          "incorrect_answers": [
-            "Cadence",
-            "Nocturna",
-            "Octavian (Bard)"
-          ]
-        },
-        {
-          "category": "General Knowledge",
-          "type": "boolean",
-          "difficulty": "hard",
-          "question": "NCIS stands for &quot;Navy Corps Investigative Service&quot;",
-          "correct_answer": "False",
-          "incorrect_answers": [
-            "True"
-          ]
-        }
-      ],
+      "collections": [],
       "id": 6
     }
   ],

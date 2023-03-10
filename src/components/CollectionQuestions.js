@@ -1,4 +1,5 @@
 import React from "react";
+const entities = require("entities");
 
 function CollectionQuestions({ question, handleUpdateDetails }) {
   function handleClick() {
@@ -8,7 +9,7 @@ function CollectionQuestions({ question, handleUpdateDetails }) {
   return (
     <>
       <h5 className="color-turquoise fw-lighter mt-4" onClick={handleClick}>
-        {question.question}
+        {entities.decodeHTML(question.question)}
       </h5>
     </>
   );
