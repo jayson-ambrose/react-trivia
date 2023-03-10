@@ -1,8 +1,7 @@
 import React from "react";
 
 function CollectionQuestions({ question, handleUpdateDetails }) {
-  
-  function handleClick(event) {
+  function handleClick() {
     handleUpdateDetails(question);
   }
 

@@ -2,11 +2,8 @@ import React, { useEffect, useState } from "react";
 import CollectionQuestions from "./CollectionQuestions";
 import CollectionQuestionsCard from "./CollectionQuestionsCard";
 
-function Collections({ activeProfile, updateActiveProfile }) {
-
-  const [toggleCard, setToggleCard] = useState(false);
-
-  const [collection, setCollection] = useState([])
+function Collections({ activeProfile }) {
+  const [showCard, setShowCard] = useState(false);
   const [questionData, setQuestionData] = useState({
     category: "",
     type: "",
@@ -74,16 +71,26 @@ function Collections({ activeProfile, updateActiveProfile }) {
 
   function handleUpdateDetails(obj) {
     setQuestionData(obj);
+    setShowCard(true);
   }
+  
+  const cardShow = showCard ? "d-block col-8" : "d-none";
 
   return (
     <div className="container p-4">
       <h4 className="text-center color-turquoise fw-normal">
         ({activeProfile.collections.length}) Saved Questions
       </h4>
-      <div className="row pt-4">
-        <div className="col-8">
-          <CollectionQuestionsCard questionData={questionData} deleteCollectionItem={deleteCollectionItem} />
+      <div className="row flex-column justify-content-end align-items-center flex-lg-row pt-4">
+        <div className={cardShow}>
+          <CollectionQuestionsCard
+            questionData={questionData}
+            activeProfile={activeProfile}
+            deleteCollectionItem={deleteCollectionItem}            
+          />
+        </div>
+        <div className="col col-lg-4 mt-4 mt-lg-0 overflow-y-scroll h-lg-100 h-400">
+          {collectionQuestions}
         </div>
         <div className="col-4">{collectionQuestions}</div>
       </div>

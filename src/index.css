@@ -3,6 +3,10 @@ li, button {
     margin: .2rem;
 }
 
+body {
+    font-family: 'Bebas Neue', cursive;
+}
+
 li:hover, button:hover {
     cursor: pointer;
 
@@ -18,6 +22,22 @@ a:hover {
     )!important
 }
 
+.right-0 {
+    right: 0;
+}
+
+.mt-10 {
+    margin-top: 10rem!important;
+}
+
+.me-10 {
+    margin-right: 10rem!important;
+}
+
+.font-oswald {
+    font-family: oswald;
+}
+
 .mx-h-475 {
     max-height: 475px;
 }
@@ -28,6 +48,10 @@ a:hover {
 
 .p-0 {
     padding: 0!important;
+}
+
+.h-345 {
+    height: 345px;
 }
 
 .h-400 {
@@ -67,11 +91,22 @@ select {
 }
 
 .question-card {
-    width: 600px;
+    width: 400px;
     border: 1px solid #03e9f4;
     background-color: #03e9f4;
+    border-radius: 16px;
     color: #050801;
+    font-family: 'Bebas Neue', cursive;
+}
 
+.question-card li, button {
+    padding: 0rem;
+    margin: 0;
+}
+
+.question-card ul {
+    line-height: 20px;
+    font-size: 20px;
 }
 
 .bg-black-gradient {
@@ -121,12 +156,12 @@ a:nth-child(1) {
                 0 0 200px #03e9f4
 }
 
-a span {
+.welcomeBtn span {
     position: absolute;
     display: block;
 }
 
-a span:nth-child(1)
+.welcomeBtn span:nth-child(1)
 {
     top: 0;
     left: -100;
@@ -146,7 +181,7 @@ a span:nth-child(1)
         left: 100%
     }
 }
-a span:nth-child(2)
+.welcomeBtn span:nth-child(2)
 {
     top: -100%;
     right: 0;
@@ -167,7 +202,7 @@ a span:nth-child(2)
         top: 100%
     }
 }
-a span:nth-child(3)
+.welcomeBtn span:nth-child(3)
 {
     bottom: 0%;
     right: -100%;
@@ -188,7 +223,7 @@ a span:nth-child(3)
         right: 100%
     }
 }
-a span:nth-child(4)
+.welcomeBtn span:nth-child(4)
 {
     bottom: -100%;
     left: 0;
@@ -230,4 +265,10 @@ a span:nth-child(4)
     background-color: #03e9f4;
     border-radius: 10px;
     border: 3px solid #ffffff;
+  }
+
+  @media screen and (max-width: 990px) {
+    .h-lg-100 {
+        max-height: 100px!important;
+    }
   }
