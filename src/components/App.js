@@ -16,13 +16,7 @@ function App() {
   const [activeProfile, setActiveProfile] = useState({
     id: 0,
     username: "Unknown",
-    collections: [
-      {
-        question: "",
-        correct_answer: "",
-        incorrect_answers: [""],
-      },
-    ],
+    collections: [],
   });
 
   useEffect(() => {
@@ -58,7 +52,7 @@ function App() {
   };
 
   const onProfileCreate = (name) => {
-    
+
     if (name === null || name === "") {
       alert("invalid name");
       return;

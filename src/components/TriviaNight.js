@@ -41,7 +41,8 @@ function TriviaNight ({decodeString}) {
                 handleAmountChange={handleAmountChange}
             />
             <TrivNightList 
-                questList={questList.filter((question) => question.question.includes(search))}
+                questList={questList.filter((question) => 
+                    question.question.toLowerCase().includes(search.toLowerCase()))}
                 decodeString={decodeString}                
             />
         </div>

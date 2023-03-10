@@ -29,6 +29,7 @@ function ProfileSelect({
           Create Profile
         </button>
         <select className="ms-0 m-3 p-2" onChange={handleSelectProfile}>
+          <option className="m-3 p-2" key="blank" value="0">Select Profile...</option>
           {profileList}
         </select>
       </div>

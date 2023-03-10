@@ -1,31 +1,6 @@
 {
   "profiles": [
     {
-      "id": 0,
-      "username": "Unknown",
-      "collections": [
-        {
-          "question": "",
-          "correct_answer": "",
-          "incorrect_answers": [
-            ""
-          ]
-        },
-        {
-          "category": "Entertainment: Music",
-          "type": "multiple",
-          "difficulty": "medium",
-          "question": "The Who&#039;s eponymous line, &quot;Teenage Wasteland&quot;, appears in which of their songs?",
-          "correct_answer": "Baba O&#039; Riley",
-          "incorrect_answers": [
-            "The Seeker",
-            "Won&#039;t Get Fooled Again",
-            "Pinball Wizard"
-          ]
-        }
-      ]
-    },
-    {
       "id": 1,
       "username": "Jayson",
       "collections": [
@@ -46,7 +21,32 @@
     {
       "id": 2,
       "username": "Dillon",
-      "collections": []
+      "collections": [
+        {
+          "category": "General Knowledge",
+          "type": "multiple",
+          "difficulty": "easy",
+          "question": "What does a funambulist walk on?",
+          "correct_answer": "A Tight Rope",
+          "incorrect_answers": [
+            "Broken Glass",
+            "Balls",
+            "The Moon"
+          ]
+        },
+        {
+          "category": "Entertainment: Video Games",
+          "type": "multiple",
+          "difficulty": "hard",
+          "question": "When was the first &quot;Half-Life&quot; released?",
+          "correct_answer": "1998",
+          "incorrect_answers": [
+            "2004",
+            "1999",
+            "1997"
+          ]
+        }
+      ]
     },
     {
       "username": "Newb",
@@ -164,6 +164,21 @@
       "name": "Christian",
       "score": 5,
       "id": 20
+    },
+    {
+      "name": "Jayson",
+      "score": 3,
+      "id": 21
+    },
+    {
+      "name": "Jayson",
+      "score": 6,
+      "id": 22
+    },
+    {
+      "name": "Jayson",
+      "score": 3,
+      "id": 23
     }
   ]
 }

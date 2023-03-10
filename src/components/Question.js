@@ -36,22 +36,18 @@ function Question({
     fetchQuery();
   }
 
-  // function decodeString(string) {
-  //   if (string === undefined) {
-  //     return
-  //   }
-  //   const fixedString = string
-  //     .replaceAll('&uacute;', "ú" )
-  //     .replaceAll('&oacute;', "ó")
-  //     .replaceAll('&atilde;', 'ã')
-  //     .replaceAll('&quot;', '"')
-  //     .replaceAll('&#039;', "'")
-
-  //     return fixedString
-  // }
-
   const handleClick = (e) => {
     const currentProfileId = activeProfile.id;
+
+    //prevents adding duplicate questions to the saved questions list.
+    if(activeProfile.collections.includes(triviaQuestion)) {
+      return
+    }
+
+    if(currentProfileId === undefined || currentProfileId === null || currentProfileId === 0){
+      return
+    }
+      
     if (
       document.getElementById("notSaved").src ==
       "https://cdn.imgchest.com/files/6yxkcqxkv7w.png"
