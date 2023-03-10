@@ -1,39 +1,51 @@
-import React, { useState } from 'react'
-import TrivNightQuestion from './TrivNightQuestion'
-import TrivNightDetailsCard from './TrivNightDetailsCard'
+import React, { useState } from "react";
+import TrivNightQuestion from "./TrivNightQuestion";
+import TrivNightDetailsCard from "./TrivNightDetailsCard";
 
-function TrivNightList ({questList}) {
+function TrivNightList({ questList }) {
+  const [selectedQuestion, setSelectedQuestion] = useState({
+    category: "",
+    type: "",
+    difficulty: "",
+    question: "",
+    correct_answer: "",
+    incorrect_answers: ["", "", ""],
+  });
+  const [showToolCard, setShowToolCard] = useState(false);
+  console.log(showToolCard);
 
-    const [selectedQuestion, setSelectedQuestion] = useState({
-        category: "",
-        type: "",
-        difficulty: "",
-        question: "",
-        correct_answer: "",
-        incorrect_answers: ["", "", ""]
-    }) 
+  const handleSelectQuestion = (obj) => {
+    console.log(obj);
+    setSelectedQuestion(obj);
+  };
 
-    const handleSelectQuestion = (obj) => {
-        console.log(obj)
-        setSelectedQuestion(obj)
-    }
-   
-    const triviaNightDisplay = questList.map((trivia) => {
-         return(
-            <TrivNightQuestion 
-                key={trivia.question} 
-                trivia={trivia}
-                handleSelectQuestion={handleSelectQuestion}
-            />
-         )})
+  const showToolCatCard = () => {
+    setShowToolCard(true);
+  };
 
+  const triviaNightDisplay = questList.map((trivia) => {
     return (
-        <div className="color-turquoise ms-3">
-            <TrivNightDetailsCard selectedQuestion={selectedQuestion} />
-            <hr/>
-            {triviaNightDisplay}
-        </div>
-    )
+      <TrivNightQuestion
+        key={trivia.question}
+        trivia={trivia}
+        handleSelectQuestion={handleSelectQuestion}
+        showToolCatCard={showToolCatCard}
+      />
+    );
+  });
+
+  return (
+    <div className="text-white ms-3">
+      <TrivNightDetailsCard
+        selectedQuestion={selectedQuestion}
+        showToolCard={showToolCard}
+      />
+      <h3 className="py-2">Questions</h3>
+      <div className="text-white my-1 overflow-y-scroll h-345 mt-4">
+        {triviaNightDisplay}
+      </div>
+    </div>
+  );
 }
 
-export default TrivNightList; 
+export default TrivNightList;

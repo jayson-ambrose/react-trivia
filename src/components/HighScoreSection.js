@@ -15,7 +15,7 @@ function HighScoreSection({ highScores }) {
   return (
     <div className="position-absolute bg-white my-4 mx-3 p-3 d-none d-lg-block mx-h-475">
       <h5 className="p-2 m-0">Top Scores: </h5>
-      <ul className="list-unstyled p-0 h-380 overflow-y-scroll">
+      <ul className="list-unstyled p-0 h-380 overflow-y-scroll font-oswald">
         {displayScores}
       </ul>
     </div>

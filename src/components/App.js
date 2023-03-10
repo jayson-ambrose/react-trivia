@@ -67,6 +67,7 @@ function App() {
   const welcomeBtn = document.getElementById("welcomeBtn");
   const welcomeMsg = document.getElementById("welcomeMsg");
   const wrapper = document.getElementById("wrapper");
+  const mainContent = document.getElementById("mainContent");
 
   const mouseClickEffect = useRef(new Audio(mouseClick));
   const audioRef = useRef(new Audio(audio));
@@ -90,6 +91,7 @@ function App() {
     welcomeBtn.classList.add("opacity-0", "d-none");
     welcomeMsg.classList.add("opacity-0", "d-none");
     wrapper.classList.add("mh-0");
+    mainContent.classList.remove("d-none");
   };
 
   return (
@@ -113,7 +115,7 @@ function App() {
         </h5>
       </div>
 
-      <div id="mainContent" className="opacity-100">
+      <div id="mainContent" className="d-none">
         <nav className="m-3">
           <ul
             className="list-unstyled d-flex justify-content-center text-center"

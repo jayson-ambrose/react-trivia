@@ -62,6 +62,18 @@
             "2006",
             "1997"
           ]
+        },
+        {
+          "category": "Entertainment: Film",
+          "type": "multiple",
+          "difficulty": "easy",
+          "question": "Which movie released in 2016 features Superman and Batman fighting?",
+          "correct_answer": "Batman v Superman: Dawn of Justice",
+          "incorrect_answers": [
+            "Batman v Superman: Superapocalypse",
+            "Batman v Superman: Black of Knight",
+            "Batman v Superman: Knightfall"
+          ]
         }
       ]
     },
@@ -142,6 +154,30 @@
             "1965",
             "1966",
             "1973"
+          ]
+        },
+        {
+          "category": "Animals",
+          "type": "multiple",
+          "difficulty": "hard",
+          "question": "To which biological phylum do all mammals, birds and reptiles belong?",
+          "correct_answer": "Chordata",
+          "incorrect_answers": [
+            "Echinodermata",
+            "Annelida",
+            "Placazoa"
+          ]
+        },
+        {
+          "category": "Entertainment: Music",
+          "type": "multiple",
+          "difficulty": "medium",
+          "question": "Which band had hits in 1975 with the songs, &#039;One Of These Nights&#039; &amp; &#039;Lyin Eyes&#039;?",
+          "correct_answer": "The Eagles",
+          "incorrect_answers": [
+            "Fools Gold",
+            "The Doobie Brothers",
+            "Fleetwood Mac"
           ]
         }
       ],

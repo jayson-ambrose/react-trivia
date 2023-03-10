@@ -7,7 +7,6 @@ function Question({
   fetchQuery,
   activeProfile,
 }) {
-
   let pointValue;
 
   function addPoint(difficulty) {
@@ -55,7 +54,7 @@ function Question({
   const randomOrder = Math.floor(Math.random() * 5) + 1;
 
   const display =
-    triviaQuestion.type === "boolean" ? "none border-0 m-0 p-0" : "d-flex";
+    triviaQuestion.type === "boolean" ? "none border-0 m-0 p-0" : "d-flex pb-1";
 
   const handleAnswer = (e) => {
     e.target.id === "correct"
@@ -64,34 +63,37 @@ function Question({
   };
 
   return (
-    <div className="question-card ms-3 mt-4 p-5 ">
+    <div className="question-card p-4">
       <img
+        className="pb-3"
         id="notSaved"
         onClick={handleClick}
         src="https://cdn.imgchest.com/files/6yxkcqxkv7w.png"
         width="25px"
       />
-      <h5 className="py-3">{triviaQuestion.question}</h5>
+      <h3>Question</h3>
+      <h4 className="py-0">{triviaQuestion.question}</h4>
+      <hr></hr>
       <ul className="list-unstyled d-flex flex-column">
         <li
           id="correct"
-          className="d-flex"
-          style={{ order: randomOrder }}
+          className="d-flex pb-1"
           onClick={handleAnswer}
+          style={{ order: randomOrder }}
         >
           {triviaQuestion.correct_answer}
         </li>
-        <li className="d-flex" style={{ order: 1 }} onClick={handleAnswer}>
+        <li className="d-flex pb-1" onClick={handleAnswer} style={{ order: 1 }}>
           {triviaQuestion.incorrect_answers[0]}
         </li>
-        <li className={display} style={{ order: 2 }} onClick={handleAnswer}>
+        <li className={display} onClick={handleAnswer} style={{ order: 2 }}>
           {triviaQuestion.incorrect_answers[1]}
         </li>
-        <li className={display} style={{ order: 3 }} onClick={handleAnswer}>
+        <li className={display} onClick={handleAnswer} style={{ order: 3 }}>
           {triviaQuestion.incorrect_answers[2]}
         </li>
       </ul>
-      <h6>
+      <h6 className="text-end mt-5">
         Point Value:{" "}
         {triviaQuestion.difficulty === "easy"
           ? "1 point."
