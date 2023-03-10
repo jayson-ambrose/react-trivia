@@ -62,9 +62,7 @@ function Collections({ activeProfile, updateActiveProfile }) {
 
    //setShowCard(false) <---should make card disappear until another list item is clicked, this solves multiple delete issue.
 
-  } 
-  
-  
+  }  
 
   const collectionQuestions = activeProfile.collections.map((question) => (
     <CollectionQuestions
